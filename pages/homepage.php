@@ -2,8 +2,64 @@
     include "../navbar.php";
 ?>
 
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-echo "Hello there!";
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-?>
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- My CSS -->
+
+    <link rel="stylesheet" href="styling/homepage.css" />
+
+    <title>Homepage</title>
+</head>
+
+<body>
+    <a href="http://localhost/house_renovation_service/pages/create_order.php" class="btn btn-primary">
+        Create an Order
+    </a>
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div class="card p-4 mt-3">
+                    <!-- Search bar for zipcode -->
+                    <h3 class="heading mt-5 text-center">Search By Zipcode</h3>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search">
+                            <input type="number" class="search-input" placeholder="Enter your zipcode...">
+                            <a href="http://localhost/house_renovation_service/pages/zipcode_search_results.php" class="search-icon"> <i class="fa fa-search"></i> </a>
+                        </div>
+                    </div>
+                    <!-- Search bar for address  -->
+                    <h3 class="heading mt-5 text-center">Search By Address</h3>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search">
+                            <input type="text" class="search-input" placeholder="Enter your address...">
+                            <a href="http://localhost/house_renovation_service/pages/address_search_results.php" class="search-icon"> <i class="fa fa-search"></i> </a>
+                        </div>
+                    </div>
+                    <!-- Search bar for budget  -->
+                    <h3 class="heading mt-5 text-center">Search By Budget</h3>
+                    <div class="d-flex justify-content-center px-5">
+                        <div class="search">
+                            <input type="number" class="search-input" placeholder="Enter your budget...">
+                            <a href="http://localhost/house_renovation_service/pages/budget_search_results.php" class="search-icon"> <i class="fa fa-search"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
