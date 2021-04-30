@@ -14,7 +14,7 @@
 
 <body>
     <div class="container">
-        <h3>Results for zipcode: 12345</h3>
+        <h3>Results for zipcode: <?php echo $_POST["zipcode"]; ?> </h3>
         <br>
         <br>
         <br>

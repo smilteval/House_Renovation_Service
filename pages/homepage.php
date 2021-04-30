@@ -1,5 +1,7 @@
 <?php
     include "../navbar.php";
+    include '../handle_form.inc.php';
+    include_once "../dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -46,17 +48,22 @@
                 <div class="card p-4 mt-3">
 
                     <!-- Search bar for zipcode -->
-
+                    <form method = "POST" action="zipcode_search_results.php">
+                    <!-- POST does not display the data inside http header. Must make sure we protect the input with handleform -->
+                    <!-- TODO: Pressing enter works, clicking the button does not -->
                     <h3 class="heading mt-5 text-center">Search By Zipcode</h3>
                     <div class="d-flex justify-content-center px-5">
                         <div class="search">
-                            <input type="number" class="search-input" placeholder="Enter your zipcode...">
+                            <input type="number" class="search-input" name="zipcode" placeholder="Enter your zipcode...">
                             <a href="http://localhost/house_renovation_service/pages/zipcode_search_results.php"
-                                class="search-icon">
+                                class="search-icon"> 
+                            <!-- <input type="submit"> -->
                                 <i class="fa fa-search"></i>
+                              
                             </a>
                         </div>
                     </div>
+                    </form>
 
                     <!-- Search bar for address  -->
 
