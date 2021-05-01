@@ -1,5 +1,5 @@
 <?php
-    include "../navbar.php";
+include "../navbar.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,7 @@
         <!-- Contractor -->
         <div class="row">
             <div class="col-md-5">
-                <img class="img-fluid rounded mb-3 mb-md-0"
-                    src="https://www.bigsteelbox.com/content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="https://www.bigsteelbox.com/content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg">
             </div>
             <div class="col-md-5">
                 <h3>Contractor One</h3>

@@ -1,5 +1,6 @@
 <?php
-    include "../navbar.php";
+include "../navbar.php";
+include_once "../dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
 
 <body>
     <div class="container">
-        <h3>Results for budget: $10,000</h3>
+        <h3>Results for budget: <?php echo "$" . $_POST["budget"]; ?> </h3>
         <br>
         <br>
         <br>
@@ -22,10 +23,27 @@
         <!-- Contractor -->
         <div class="row">
             <div class="col-md-5">
-                <img class="img-fluid rounded mb-3 mb-md-0"
-                    src="https://www.bigsteelbox.com/content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="https://www.bigsteelbox.com/content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg">
             </div>
             <div class="col-md-5">
+
+                <?php //displaying contractor based on budget
+                //TODO: UPDATE ME WHEN WE UPDATE ZIPCODE SEARCH
+                $query = "SELECT company_name FROM contractor WHERE cost_for_hire < ?"; //users budget should be hire than contractor cost for hire
+                $budget = $_POST["budget"];
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("i", $budget);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($result->num_rows === 0) exit('No Rows'); //exit if empty
+                //TODO: Change fetch_assoc to fetch_all 
+                while ($row = $result->fetch_assoc()) { //Unsure if fetch_all would be better
+                    //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
+                    echo $row['company_name'] . "<br>"; //print out name of company, works for assoc
+
+                } //all of the names would be stored inside row
+
+                ?>
                 <h3>Contractor One</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita

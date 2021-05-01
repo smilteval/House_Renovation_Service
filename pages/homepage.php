@@ -1,7 +1,7 @@
 <?php
-    include "../navbar.php";
-    include '../handle_form.inc.php';
-    include_once "../dbconnect.inc.php";
+include "../navbar.php";
+include '../handle_form.inc.php';
+include_once "../dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +14,7 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
     <!-- Font Awesome Icons -->
 
@@ -37,8 +36,7 @@
                 <!-- Create an order button -->
 
                 <div class="row d-flex justify-content-end mr-1">
-                    <a href="http://localhost/house_renovation_service/pages/create_order.php" class="btn btn-primary"
-                        id="order-button">
+                    <a href="http://localhost/house_renovation_service/pages/create_order.php" class="btn btn-primary" id="order-button">
                         Create an Order
                     </a>
                 </div>
@@ -48,21 +46,17 @@
                 <div class="card p-4 mt-3">
 
                     <!-- Search bar for zipcode -->
-                    <form method = "POST" action="zipcode_search_results.php">
-                    <!-- POST does not display the data inside http header. Must make sure we protect the input with handleform -->
-                    <!-- TODO: Pressing enter works, clicking the button does not -->
-                    <h3 class="heading mt-5 text-center">Search By Zipcode</h3>
-                    <div class="d-flex justify-content-center px-5">
-                        <div class="search">
-                            <input type="number" class="search-input" name="zipcode" placeholder="Enter your zipcode...">
-                            <a href="http://localhost/house_renovation_service/pages/zipcode_search_results.php"
-                                class="search-icon"> 
-                            <!-- <input type="submit"> -->
-                                <i class="fa fa-search"></i>
-                              
-                            </a>
+                    <form method="POST" action="zipcode_search_results.php">
+                        <!-- POST does not display the data inside http header. Must make sure we protect the input with handleform -->
+                        <h3 class="heading mt-5 text-center">Search By Zipcode</h3>
+                        <div class="d-flex justify-content-center px-5">
+                            <div class="search">
+                                <input type="number" class="search-input" name="zipcode" placeholder="Enter your zipcode...">
+                                <button type="submit" class="btn search-icon">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     </form>
 
                     <!-- Search bar for address  -->
@@ -71,79 +65,83 @@
                     <div class="d-flex justify-content-center px-5">
                         <div class="search">
                             <input type="text" class="search-input" placeholder="Enter your address...">
-                            <a href="http://localhost/house_renovation_service/pages/address_search_results.php"
-                                class="search-icon">
+                            <button type="submit" class="btn search-icon">
                                 <i class="fa fa-search"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Search bar for budget  -->
 
-                    <h3 class="heading mt-5 text-center">Search By Budget</h3>
-                    <div class="d-flex justify-content-center px-5">
-                        <div class="search">
-                            <input type="number" class="search-input" placeholder="Enter your budget...">
-                            <a href="http://localhost/house_renovation_service/pages/budget_search_results.php"
-                                class="search-icon">
-                                <i class="fa fa-search"></i>
-                            </a>
+                    <form method="POST" action="budget_search_results.php">
+                        <h3 class="heading mt-5 text-center">Search By Budget</h3>
+                        <div class="d-flex justify-content-center px-5">
+                            <div class="search">
+                                <input type="number" class="search-input" name="budget" placeholder="Enter your budget...">
+                                <button type="submit" class="btn search-icon">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
 
                     <!-- Search for services  -->
+                    <!-- Essentially a Radio input -->
 
                     <h3 class="heading mt-5 text-center">Search By Specialization</h3>
-                    <div class="row mt-4 g-1 px-4 mb-5">
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/kitchen.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Kitchen Renovation </div>
-                                </div>
-                            </a>
+
+                    <form method="POST" action="specialization_search_results.php">
+                        <div class="row mt-4 g-1 px-4 mb-5">
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Kitchen Renovation" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/kitchen.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Kitchen Renovation </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Bathroom Renovation" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/bathtub.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Bathroom Renovation </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Full House Renovation" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/house.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Full House Renovation </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Interior Design" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/interior.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Interior Design </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Flooring" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/plank.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Flooring </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Painting" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/paint.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Painting </div>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/bathtub.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Bathroom Renovation </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/house.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Full House Renovation </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/interior.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Interior Design </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/plank.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Flooring </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
-                                <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                    <img src="../styling/icons/paint.png" width="50">
-                                    <div class="text-center mg-text pt-1"> Painting </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

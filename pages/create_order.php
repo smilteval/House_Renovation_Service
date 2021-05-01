@@ -76,26 +76,26 @@ include "../navbar.php";
             //display service selection
             if (!empty($_POST["rooms"])) {
                 foreach ($_POST["rooms"] as $checked) {
-                    echo "<h4>Please select services for your <i>".$checked."</i></h4>";
+                    echo "<h4>Please select services for your <i>" . $checked . "</i></h4>";
                     include "service_selection.php";
                 }
 
                 // //send selections to the db
                 // $room = $_POST["rooms"];
                 // $room_query= "INSERT INTO room_info (room_name, room_cost)";
-               
-            
+
+
                 // $stmt = $conn->prepare($room_query);
                 // $stmt->bind_param("s", $room);
                 // $stmt->execute();
                 // $result = $stmt->get_result();
-            
+
                 // if ($result->num_rows === 0) {
                 //     exit(0);
                 // }
-            
+
                 // $partInfo = $result3->fetch_all(MYSQLI_ASSOC);
-            
+
                 // echo "<table border=1>
                 //         <tr>
                 //             <th>PART_NUM</th>
@@ -105,7 +105,7 @@ include "../navbar.php";
                 //             <th>WAREHOUSE</th>
                 //             <th>PRICE</th>
                 //         </tr>";
-            
+
                 // foreach ($partInfo as $info) {
                 //     echo "<tr>";
                 //     foreach ($info as $key => $value) {
@@ -113,7 +113,7 @@ include "../navbar.php";
                 //     }
                 //     echo "</tr>";
                 // }
-            
+
                 // echo "</table>";
 
 
