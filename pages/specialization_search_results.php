@@ -1,6 +1,6 @@
 <?php
 include "../navbar.php";
-include_once "../dbconnect.inc.php";
+include_once "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>

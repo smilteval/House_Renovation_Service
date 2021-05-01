@@ -1,7 +1,7 @@
 <?php
 include "../navbar.php";
 include '../handle_form.inc.php';
-include_once "../dbconnect.inc.php";
+include_once "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +33,13 @@ include_once "../dbconnect.inc.php";
         <div class="row d-flex justify-content-center">
             <div class="col-md-9">
 
-                <!-- Create an order button -->
+                <!-- Create an order button
 
                 <div class="row d-flex justify-content-end mr-1">
                     <a href="http://localhost/house_renovation_service/pages/create_order.php" class="btn btn-primary" id="order-button">
                         Create an Order
                     </a>
-                </div>
+                </div> -->
 
                 <!-- Search Fields -->
 

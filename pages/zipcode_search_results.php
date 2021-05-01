@@ -1,6 +1,6 @@
 <?php
 include "../navbar.php";
-include_once "../dbconnect.inc.php";
+include_once "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +22,11 @@ include_once "../dbconnect.inc.php";
 
         <!-- Contractor -->
         <div class="row">
-            <div class="col-md-5">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="https://www.bigsteelbox.com/content/uploads/2019/11/Home-renovation-costs-2100x1200.jpg">
-            </div>
+
             <div class="col-md-5">
 
                 <?php //displaying contractors by their zipcode
-                $query = "SELECT company_name FROM contractor WHERE zipcode = ?";
+                $query = "SELECT * FROM contractor WHERE zipcode = ?";
                 $zip = $_POST["zipcode"];
                 $stmt = $conn->prepare($query);
                 $stmt->bind_param("s", $zip);
@@ -38,19 +36,22 @@ include_once "../dbconnect.inc.php";
                 //TODO: Change fetch_assoc to fetch_all 
                 while ($row = $result->fetch_assoc()) { //Unsure if fetch_all would be better
                     //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
-                    echo $row['company_name'] . "<br>"; //print out name of company, works for assoc
-
+                    echo "<h3>" . $row['company_name'] . "</h3>"; //print out name of company, works for assoc
+                    // echo " <p>
+                    // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
+                    // laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
+                    // perspiciatis atque eveniet unde.
+                    // </p>";
+                    //var_dump($row);
+                    echo "<form action= 'create_order.php' method='POST'> ";
+                    echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";
+                    echo "</form>";
                 } //all of the names would be stored inside row
 
                 ?>
-                <h3>Contractor One</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
-                    laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
-                    perspiciatis atque eveniet unde.
-                </p>
-                <a class="btn btn-primary" href="http://localhost/house_renovation_service/pages/company_info.php">Learn
-                    More</a>
+
+
+
             </div>
         </div>
         <hr>
