@@ -1,7 +1,3 @@
-<?php
-    include "../navbar.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +9,20 @@
 </head>
 
 <body>
-    <h3>List of services available: </h3>
-    <br>
-    <br>
-    <h3>List of contractors available: </h3>
-    <br>
+    <input type="checkbox" id="flooring" name="flooring" value="flooring">
+    <label for="flooring"> Flooring</label><br>
 
-    <a href="http://localhost/house_renovation_service/pages/order_summary.php" class="btn btn-primary"
-        id="order-button">
-        Checkout
-    </a>
+    <input type="checkbox" id="wall_painting" name="wall_painting" value="wall_painting">
+    <label for="wall_painting"> Wall Painting</label><br>
+
+    <input type="checkbox" id="remodeling" name="remodeling" value="remodeling">
+    <label for="remodeling"> Remodeling</label><br>
+
+    <input type="checkbox" id="renovating" name="renovating" value="renovating">
+    <label for="renovating"> Renovating</label><br>
+
+    <input type="checkbox" id="interior_design" name="interior_design" value="interior_design">
+    <label for="interior_design"> Interior Design</label><br>
 </body>
 
 </html>
