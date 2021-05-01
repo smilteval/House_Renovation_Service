@@ -30,10 +30,10 @@
         </li>
         <!-- If user is not logged in  -->
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">Signup</a>
+          <a class="nav-link" href="signup.php" target="">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">Login</a>
+          <a class="nav-link" href="login.php" target="">Login</a>
         </li>
       </ul>
     </div>
