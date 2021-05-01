@@ -57,3 +57,7 @@ INSERT INTO order_info (customer_id_fk,contractor_id_fk,total_price,order_date,p
 INSERT INTO room(room_name,order_id_fk,room_price) VALUES ('Bathroom','1','7000');
 
 INSERT INTO service(service_name,price,room_id_fk) VALUES ('Renovation','7000','1');
+
+alter table customer add password varchar(255);
+alter table customer add username varchar(255) ;
+ALTER TABLE `customer` ADD UNIQUE(`username`)
