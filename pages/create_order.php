@@ -16,7 +16,7 @@
     <h3>Create your order here</h3>
     <br>
     <h5>Which Rooms are you planning to renovate?</h5>
-    <form action="/action_page.php">
+    <form method = "POST" action="/action_page.php">
         <input type="checkbox" id="kitchen" name="kitchen" value="kitchen">
         <label for="kitchen"> Kitchen</label><br>
 
@@ -36,6 +36,7 @@
             id="order-button">
             Continue to Services
         </a>
+        <input type="submit">
     </form>
 </body>
 

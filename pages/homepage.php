@@ -55,9 +55,10 @@
                     <div class="d-flex justify-content-center px-5">
                         <div class="search">
                             <input type="number" class="search-input" name="zipcode" placeholder="Enter your zipcode...">
-                            <a href="http://localhost/house_renovation_service/pages/zipcode_search_results.php"
-                                class="search-icon"> 
-                            <!-- <input type="submit"> -->
+                            <!-- <a href="http://localhost/house_renovation_service/pages/zipcode_search_results.php"
+                                class="search-icon">  -->
+                            <input type="submit" class="search-icon">
+                            <!-- INPUT CARRIES OVER TO NEXT PAGE WITH THIS SUBMIT BUTTON, MUST FIX -->
                                 <i class="fa fa-search"></i>
                               
                             </a>
@@ -80,69 +81,82 @@
 
                     <!-- Search bar for budget  -->
 
+                    <form method = "POST" action="budget_search_results.php">
                     <h3 class="heading mt-5 text-center">Search By Budget</h3>
                     <div class="d-flex justify-content-center px-5">
                         <div class="search">
-                            <input type="number" class="search-input" placeholder="Enter your budget...">
-                            <a href="http://localhost/house_renovation_service/pages/budget_search_results.php"
-                                class="search-icon">
+                            <input type="number" class="search-input" name = "budget" placeholder="Enter your budget...">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/budget_search_results.php"
+                                class="search-icon"> -->
+                                <input type = "submit" class="search-icon">
                                 <i class="fa fa-search"></i>
                             </a>
                         </div>
                     </div>
+                    </form>
 
                     <!-- Search for services  -->
+                    <!-- Essentially a Radio input -->
 
                     <h3 class="heading mt-5 text-center">Search By Specialization</h3>
+                    
+                    <form method = "POST" action = "specialization_search_results.php">
                     <div class="row mt-4 g-1 px-4 mb-5">
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/kitchen.png" width="50">
                                     <div class="text-center mg-text pt-1"> Kitchen Renovation </div>
+                                    <input type="submit" name="specialization" value = "Kitchen Renovation"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/bathtub.png" width="50">
                                     <div class="text-center mg-text pt-1"> Bathroom Renovation </div>
+                                    <input type="submit" name="specialization" value = "Bathroom Renovation"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/house.png" width="50">
                                     <div class="text-center mg-text pt-1"> Full House Renovation </div>
+                                    <input type="submit" name="specialization" value = "Full House Renovation"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/interior.png" width="50">
                                     <div class="text-center mg-text pt-1"> Interior Design </div>
+                                    <input type="submit" name="specialization" value = "Interior Design"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/plank.png" width="50">
                                     <div class="text-center mg-text pt-1"> Flooring </div>
+                                    <input type="submit" name="specialization" value = "Flooring"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
                         <div class="col-md-2">
-                            <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php">
+                            <!-- <a href="http://localhost/house_renovation_service/pages/specialization_search_results.php"> -->
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">
                                     <img src="../styling/icons/paint.png" width="50">
                                     <div class="text-center mg-text pt-1"> Painting </div>
+                                    <input type="submit" name="specialization" value = "Painting"/>
                                 </div>
-                            </a>
+                            <!-- </a> -->
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

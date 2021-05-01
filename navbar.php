@@ -20,14 +20,16 @@
               <li class="nav-item active">
                 <a class="nav-link" href="http://localhost/house_renovation_service/pages/homepage.php">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Something
-                </a>
-                <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                  <a class="dropdown-item" href="">Something2</a>
-                  
-                </div>
+              <!-- If user is logged in UPDATE WITH SESSIONS OR COOKIES-->
+              <li class="nav-item">
+                <a class="nav-link" href="#" target="_blank">Logout</a> 
+              </li>
+              <!-- If user is not logged in  -->
+              <li class="nav-item">
+                <a class="nav-link" href="#" target="_blank">Signup</a> 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" target="_blank">Login</a> 
               </li>
             </ul>
           </div>
