@@ -9,19 +9,19 @@
 </head>
 
 <body>
-    <input type="checkbox" id="flooring" name="flooring" value="flooring">
+    <input type="checkbox" id="flooring" name="services[]" value="Flooring">
     <label for="flooring"> Flooring</label><br>
 
-    <input type="checkbox" id="wall_painting" name="wall_painting" value="wall_painting">
+    <input type="checkbox" id="wall_painting" name="services[]" value="Wall Painting">
     <label for="wall_painting"> Wall Painting</label><br>
 
-    <input type="checkbox" id="remodeling" name="remodeling" value="remodeling">
+    <input type="checkbox" id="remodeling" name="services[]" value="Remodeling">
     <label for="remodeling"> Remodeling</label><br>
 
-    <input type="checkbox" id="renovating" name="renovating" value="renovating">
+    <input type="checkbox" id="renovating" name="services[]" value="Renovating">
     <label for="renovating"> Renovating</label><br>
 
-    <input type="checkbox" id="interior_design" name="interior_design" value="interior_design">
+    <input type="checkbox" id="interior_design" name="services[]" value="Interior Design">
     <label for="interior_design"> Interior Design</label><br>
 </body>
 

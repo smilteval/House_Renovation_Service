@@ -1,6 +1,7 @@
 <?php
 include "../navbar.php";
-
+include "../includes/dbconnect.inc.php";
+session_start();
 ?>
 
 
@@ -36,41 +37,54 @@ include "../navbar.php";
             <br>
         </form>
 
-
-        
-
         <?php
         if (isset($_POST["submit"])) {
 
             //display service selection
+
             if (!empty($_POST["rooms"])) {
+
+                //store the room names into an array to use it later
+                $_SESSION["rooms"] = $_POST["rooms"];
+
+                echo "<form action='order_summary.php' method='POST'>";
+
                 foreach ($_POST["rooms"] as $checked) {
+
                     echo "<h4>Please select services for your <i>" . $checked . "</i></h4>";
                     include "service_selection.php";
+                    
+                    
                 }
+                 echo "<input type='submit' name='submit' value='Choose options' /><br>";
+                //checkout button
+                echo "</form>";
+                
             } else {
                 echo "<div class='error'>Room is not selected!</div>";
             }
-            //checkout button
-            echo "<a href='http://localhost/house_renovation_service/pages/order_summary.php' class='btn btn-primary' id='order-button'> Checkout </a>";
         }
 
-        $query = "INSERT INTO order_info (customer_id, contractor_id, order_date)";
-        $query .= "VALUES(?,?,?)";
 
-        $contractor_id = $_POST["id"];
-        $customer_id = 1;
-        $order_date = date('m/d/Y');
-
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("iis", $customer_id, $contractor_id, $order_date);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        var_dump($result);
         ?>
 
     </div>
 </body>
 
 </html>
+
+<?php
+$query = "INSERT INTO order_info (customer_id, contractor_id, order_date)";
+$query .= "VALUES(?,?,?)";
+
+$contractor_id = $_POST["id"];
+$customer_id = 1;
+$order_date = date('m/d/Y');
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param("iis", $customer_id, $contractor_id, $order_date);
+$stmt->execute();
+$result = $stmt->get_result();
+
+var_dump($result);
+?>
