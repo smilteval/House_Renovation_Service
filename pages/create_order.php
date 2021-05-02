@@ -41,11 +41,27 @@ session_start();
         if (isset($_POST["submit"])) {
 
             //display service selection
-
+            // $_POST["rooms"];
+            // var_dump($_POST["rooms"][0]);
+            
             if (!empty($_POST["rooms"])) {
 
                 //store the room names into an array to use it later
                 $_SESSION["rooms"] = $_POST["rooms"];
+               
+                $_SESSION["rooms"] = array();
+                $_SESSION["rooms"]["Interior Design"];
+                var_dump($_SESSION);
+
+                //  MultiArray[room][service]
+                // Add service for:     Bathroom
+                //            Flooring, Wall Painting  
+                // Add service for:     Office
+                //            Flooring, Interior Design, Remodeling
+
+
+
+
 
                 echo "<form action='order_summary.php' method='POST'>";
 
