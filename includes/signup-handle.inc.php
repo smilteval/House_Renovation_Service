@@ -9,11 +9,11 @@
 
     $error = [];
 
-    echo "hi";
+    // echo "hi"; //test
     if(isset($_POST['signup'])){ //submit comes from attribute name in the button
         //Assume that you have a regular expression (regex)
         $username = sanitizeString($_POST['username']);
-        $password = sanitizeString($_POST['password']);
+        $pwd = sanitizeString($_POST['password']);
         $first_name = sanitizeString($_POST['first_name']);
         $last_name = sanitizeString($_POST['last_name']);
         $address = sanitizeString($_POST['address']);
@@ -21,7 +21,7 @@
         $budget = sanitizeString($_POST['budget']);
 
 
-        echo $username;
+        // echo $username;
 
         $checkQ = "SELECT username FROM customer WHERE username = ?";
 
@@ -31,17 +31,17 @@
         $stmt->execute();
 
         //This is an object, it can tell you how many rows have returned from query
-        $result = $stmt->get_result();
-        var_dump($result());
+        // $result = $stmt->get_result();
+        // var_dump($result());
 
         if($stmt->get_result()->num_rows > 0){ //there is duplicate
             $error['duplicate'] = "Account is taken";   
         } else { //appending the account information into the db
 
             //returns hashed string
-            $hased_pwd = password_hash($password, PASSWORD_DEFAULT);
+            $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-            $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, zipcode, budget) ";
+            $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, zipcode, budget)";
             $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
 
             $stmt2 = $conn->prepare($insertQ);
@@ -49,7 +49,8 @@
             if(!$stmt2->execute()){
                 $error["insert"] = "We have a problem creating your account"; //can also use try catch block
             } else { // no problems in creating the account
-                echo "Your account is created";
+                echo "Your account is created"; 
+                // ** Maybe redirect the user to welcome page or login? **
             }
         }
     }

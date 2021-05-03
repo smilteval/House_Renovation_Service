@@ -59,7 +59,9 @@ session_start();
                 // Add service for:     Office
                 //            Flooring, Interior Design, Remodeling
 
-
+                //Session[room][service]
+                //$_SESSION[1][1] //for example kitchen / flooring
+                //$_SESSION[1][2] //kitchen/painiting
 
 
 

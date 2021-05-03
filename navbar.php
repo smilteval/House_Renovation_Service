@@ -1,4 +1,8 @@
 <!doctype html>
+<?php 
+  include "includes/dbconnect.inc.php"; 
+  // session_start();
+?>
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -25,15 +29,18 @@
           <a class="nav-link" href="http://localhost/house_renovation_service/pages/homepage.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <!-- If user is logged in UPDATE WITH SESSIONS OR COOKIES-->
+        <?php if(isset($_SESSION["userID"])) {?>
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">Logout</a>
+          <a class="nav-link" href="../includes/logout-handle.inc.php" target="">Logout</a>
         </li>
         <!-- If user is not logged in  -->
+        <?php /*} else {*/ //FIX ME ?>
         <li class="nav-item">
           <a class="nav-link" href="signup.php" target="">Signup</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php" target="">Login</a>
+          <?php } ?>
         </li>
       </ul>
     </div>
