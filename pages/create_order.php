@@ -23,8 +23,8 @@ session_start();
         <br>
         <h5>Which Rooms are you planning to renovate?</h5>
 
-        <form action="" method="post">
-            <label><input type="checkbox" name="rooms[]" value="Living room"> Living room </label><br>
+        <form action="service_per_room_form.php" method="post">
+            <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Bedroom"> Bedroom </label><br>
             <label><input type="checkbox" name="rooms[]" value="Dining Room"> Dining Room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Kitchen"> Kitchen </label><br>
@@ -38,50 +38,50 @@ session_start();
         </form>
 
         <?php
-        if (isset($_POST["submit"])) {
+        // if (isset($_POST["submit"])) {
 
-            //display service selection
-            // $_POST["rooms"];
-            // var_dump($_POST["rooms"][0]);
-            
-            if (!empty($_POST["rooms"])) {
+        //     //display service selection
+        //     // $_POST["rooms"];
+        //     // var_dump($_POST["rooms"][0]);
 
-                //store the room names into an array to use it later
-                $_SESSION["rooms"] = $_POST["rooms"];
-               
-                $_SESSION["rooms"] = array();
-                $_SESSION["rooms"]["Interior Design"];
-                var_dump($_SESSION);
+        //     if (!empty($_POST["rooms"])) {
 
-                //  MultiArray[room][service]
-                // Add service for:     Bathroom
-                //            Flooring, Wall Painting  
-                // Add service for:     Office
-                //            Flooring, Interior Design, Remodeling
+        //         //store the room names into an array to use it later
+        //         $_SESSION["rooms"] = $_POST["rooms"];
 
-                //Session[room][service]
-                //$_SESSION[1][1] //for example kitchen / flooring
-                //$_SESSION[1][2] //kitchen/painiting
+        //         // $_SESSION["rooms"] = array();
+        //         // $_SESSION["rooms"]["Interior Design"];
+        //         var_dump($_SESSION);
+
+        //         //  MultiArray[room][service]
+        //         // Add service for:     Bathroom
+        //         //            Flooring, Wall Painting  
+        //         // Add service for:     Office
+        //         //            Flooring, Interior Design, Remodeling
+
+        //         //Session[room][service]
+        //         //$_SESSION[1][1] //for example kitchen / flooring
+        //         //$_SESSION[1][2] //kitchen/painiting
 
 
 
-                echo "<form action='order_summary.php' method='POST'>";
+        //         echo "<form action='order_summary.php' method='POST'>";
 
-                foreach ($_POST["rooms"] as $checked) {
+        //         foreach ($_POST["rooms"] as $checked) {
 
-                    echo "<h4>Please select services for your <i>" . $checked . "</i></h4>";
-                    include "service_selection.php";
-                    
-                    
-                }
-                 echo "<input type='submit' name='submit' value='Choose options' /><br>";
-                //checkout button
-                echo "</form>";
-                
-            } else {
-                echo "<div class='error'>Room is not selected!</div>";
-            }
-        }
+        //             echo "<h4>Please select services for your <i>" . $checked . "</i></h4>";
+        //             include "service_selection.php";
+
+
+        //         }
+        //          echo "<input type='submit' name='submit' value='Choose options' /><br>";
+        //         //checkout button
+        //         echo "</form>";
+
+        //     } else {
+        //         echo "<div class='error'>Room is not selected!</div>";
+        //     }
+        // }
 
 
         ?>
