@@ -10,7 +10,7 @@
         define("DATABASE", "renovation");
 
         $conn = new mysqli(DOMAIN, USERNAME, PWD, DATABASE);
-        echo "&emsp;"; //success!
+        // echo "&emsp;"; //success! Unneccessary to print
         //may be a conflict with utf8 which is up to 4 bytes on the website and utf8, about 2-3 bytes in the database
         $conn->set_charset("utf8mb4");
 
