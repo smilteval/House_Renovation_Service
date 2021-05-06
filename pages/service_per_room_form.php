@@ -64,8 +64,7 @@ if (isset($_POST["submit"])) {
 
 			$room_count = 0; //tracks the number of rooms with services already selected
 
-			for($i = 0; $i < 9; $i++){
-				
+			for ($i = 0; $i < 9; $i++) {
 			}
 
 			if ($room_selection["Living Room"] === true) {
@@ -78,12 +77,12 @@ if (isset($_POST["submit"])) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 0 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -97,16 +96,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -120,16 +119,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -143,16 +142,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -166,16 +165,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -189,16 +188,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -212,16 +211,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -235,16 +234,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
@@ -258,16 +257,16 @@ if (isset($_POST["submit"])) {
 				include "service_selection.php";
 
 				//if it's the first room selection, do not show previous button
-				if ($room_count === 1) {
+				if ($room_count === 0) {
 					echo "<input type='button' name='data[]' class='next btn btn-info' value='Next' />";
 				}
 				//if it's the last room selection, show checkout button
-				if ($room_count === $selected_room_count) {
+				if ($room_count === $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='submit' name='submit' class='submit btn btn-success' value='Submit' id='submit_data' />";
 				}
 				//otherwise show both previous and next buttons
-				if ($room_count !== 1 && $room_count !== $selected_room_count) {
+				if ($room_count !== 0 && $room_count !== $selected_room_count - 1) {
 					echo "<input type='button' name='previous' class='previous btn btn-default' value='Previous' />";
 					echo "<input type='button' name='next' class='next btn btn-info' value='Next' />";
 				}
