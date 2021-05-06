@@ -1,7 +1,7 @@
 <!doctype html>
 <?php 
   include "includes/dbconnect.inc.php"; 
-  // session_start();
+  
 ?>
 
 <head>
@@ -29,12 +29,12 @@
           <a class="nav-link" href="http://localhost/house_renovation_service/pages/homepage.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <!-- If user is logged in UPDATE WITH SESSIONS OR COOKIES-->
-        <?php if(isset($_SESSION["userID"])) {?>
+        <?php if(isset($_SESSION["username"])) {?>
         <li class="nav-item">
           <a class="nav-link" href="../includes/logout-handle.inc.php" target="">Logout</a>
         </li>
         <!-- If user is not logged in  -->
-        <?php /*} else {*/ //FIX ME ?>
+        <?php } else { //FIX ME ?>
         <li class="nav-item">
           <a class="nav-link" href="signup.php" target="">Signup</a>
         </li>

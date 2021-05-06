@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../navbar.php";
 include '../handle_form.inc.php';
 include_once "../includes/dbconnect.inc.php";
@@ -44,7 +45,9 @@ include_once "../includes/dbconnect.inc.php";
                 <!-- Search Fields -->
 
                 <div class="card p-4 mt-3">
-                <?php echo "Welcome ".$_SESSION["username"]."!";?>
+                <?php if(isset($_SESSION["username"])) {
+                    echo "Welcome ".$_SESSION["username"]."!";
+                }?>
 
                     <!-- Search bar for zipcode -->
                     <form method="POST" action="zipcode_search_results.php">
