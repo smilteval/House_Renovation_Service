@@ -27,6 +27,13 @@ include_once "../includes/dbconnect.inc.php";
 
     <title>Homepage</title>
 </head>
+<style>
+button[class="btn"]{
+    display: block;
+
+}
+
+</style>
 
 <body>
 
@@ -64,16 +71,17 @@ include_once "../includes/dbconnect.inc.php";
                     </form>
 
                     <!-- Search bar for address  -->
+                    <!-- I'm sorry I had to cut this from the project -->
 
-                    <h3 class="heading mt-5 text-center">Search By Address</h3>
-                    <div class="d-flex justify-content-center px-5">
-                        <div class="search">
-                            <input type="text" class="search-input" placeholder="Enter your address...">
-                            <button type="submit" class="btn search-icon">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <!-- <h3 class="heading mt-5 text-center">Search By Address</h3> -->
+                    <!-- <div class="d-flex justify-content-center px-5"> -->
+                        <!-- <div class="search"> -->
+                            <!-- <input type="text" class="search-input" placeholder="Enter your address..."> -->
+                            <!-- <button type="submit" class="btn search-icon"> -->
+                                <!-- <i class="fa fa-search"></i> -->
+                            <!-- </button> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
 
                     <!-- Search bar for budget  -->
 
@@ -95,7 +103,7 @@ include_once "../includes/dbconnect.inc.php";
                     <h3 class="heading mt-5 text-center">Search By Specialization</h3>
 
                     <form method="POST" action="specialization_search_results.php">
-                        <div class="row mt-4 g-1 px-4 mb-5">
+                        <div class="row mt-4 g-1 px-1 mb-5"> <!-- this is where we fix buttons? -->
                             <div class="col-md-2">
                                 <button type="submit" name="specialization" value="Kitchen Renovation" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">

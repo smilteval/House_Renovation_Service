@@ -10,6 +10,30 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
     <title>Login</title>
 </head>
 
+<style>
+    .container{
+        padding: 10px;
+    }
+    label{
+        width: 210px;
+        display: inline-block;
+    }
+    input[type="submit"]{
+        background-color: #EFEFEF;
+        border: 0;
+        padding: 7px;
+        width: 178px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    input[type="submit"]:hover{
+        background-color: #d1d1d1;
+    }
+    small{
+       color: red;
+    }
+</style>
+
 <body>
 
     <?php
@@ -22,11 +46,24 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
     }
     ?>
     <form action="login.php" method="POST"> <!-- changed action to login.php, previously was on homepage.php. I guess the form never finished and just instantly went to homepage -->
-        Username: <input type="text" name="username" value="<?php echo $username ?? ''; ?>">
-        <br>
+        <label>Username: 
+            <input type="text" name="username" value="<?php echo $username ?? ''; ?>">
+    <br>
+            <small>
+                <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
+            </small>
+        </label>
+    <br>
 
-        Password: <input type="password" name="password" value="<?php echo $password ?? ''; ?>"> <!-- password had one character already filled in because of the white space between ?> and ". Strange -->
+        <label>Password: 
+            <input type="password" name="password" value="<?php echo $password ?? ''; ?>"> <!-- password had one character already filled in because of the white space between ?> and ". Strange -->
         <br>
+            <small>
+                <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
+            </small>
+        </label>
+    <br>
+    <br>
 
         <input type="submit" name="login" value="Login">
     </form>

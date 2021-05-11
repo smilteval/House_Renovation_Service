@@ -37,15 +37,16 @@ include_once "../includes/dbconnect.inc.php";
                 while ($row = $result->fetch_assoc()) { //Unsure if fetch_all would be better
                     //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
                     echo "<h3>" . $row['company_name'] . "</h3>"; //print out name of company, works for assoc
-                    // echo " <p>
-                    // Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita
-                    // laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos
-                    // perspiciatis atque eveniet unde.
-                    // </p>";
+                    echo " <p> <b>Cost for Hire</b>: $".$row['cost_for_hire']."</br>";
+                    echo " <b>Specialization</b>: ".$row['specialization']."</br>";
+                    echo " <b>Phone</b>: ".$row['phone']."</br>";
+                    echo " <b>Email</b>: ".$row['email']."<br>";
+                    echo " <b>Specialization</b>: ".$row['website']."</p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";
                     echo "</form>";
+                    echo "<hr>"; //unsure if hr break looks better or just a br
                 } //all of the names would be stored inside row
 
                 ?>
