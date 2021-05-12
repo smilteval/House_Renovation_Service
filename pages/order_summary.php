@@ -20,42 +20,15 @@ session_start();
     </a>
 
     <?php
-    if (isset($_POST["submit"])) {
+    
+    if(isSet($_POST["submit"])){
 
-        //display service selection
+        $_SESSION[$_SESSION["room name"]] = $_POST["services"];
 
-        if (!empty($_POST["services"])) {
+        var_dump($_SESSION);
 
-            foreach ($_POST["services"] as $checked) {
-                echo $checked;
-            }
-
-            foreach ($_SESSION["rooms"] as $rooms) {
-                echo $rooms;
-            }
-        }
-
-        //ending the session 
-
-        echo "<br>";
-        var_dump($_SESSION['rooms']);
-        echo "<br>";
-        var_dump($_POST['services']);
-
-
-        $_SESSION = [];
-        session_destroy();
+    
     }
-
-    //room_info table
-
-    //bedroom 
-    //dining room
-    //kitchen
-    //bathroom
-
-
-
 
     ?>
 </body>

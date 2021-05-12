@@ -21,7 +21,7 @@ session_start();
         <br>
         <h5>Which Rooms are you planning to renovate?</h5>
 
-        <form action="service_per_room_form.php" method="post">
+        <form action="service-per-room2.php" method="post">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Bedroom"> Bedroom </label><br>
             <label><input type="checkbox" name="rooms[]" value="Dining Room"> Dining Room </label><br>
