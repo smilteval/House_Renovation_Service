@@ -58,7 +58,7 @@ include_once "../includes/dbconnect.inc.php";
                     <!-- Search bar for zipcode -->
                     <form method="POST" action="zipcode_search_results.php">
                         <!-- POST does not display the data inside http header. Must make sure we protect the input with handleform -->
-                        <h3 class="heading mt-5 text-center">Search By Zipcode</h3>
+                        <h3 class="heading mt-5 text-center">Search By Zip Code</h3>
                         <div class="d-flex justify-content-center px-5">
                             <div class="search">
                                 <input type="number" class="search-input" name="zipcode" placeholder="Enter your zipcode...">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../navbar.php";
 include_once "../includes/dbconnect.inc.php";
 ?>
@@ -15,9 +16,7 @@ include_once "../includes/dbconnect.inc.php";
 
 <body>
     <div class="container">
-        <h3>Results for budget: <?php echo "$" . $_POST["budget"]; ?> </h3>
-        <br>
-        <br>
+        <h3>Results for budget: <?php echo "$" . number_format($_POST["budget"]); ?> </h3>
         <br>
 
         <!-- Contractor -->
@@ -36,18 +35,22 @@ include_once "../includes/dbconnect.inc.php";
                 //TODO: Change fetch_assoc to fetch_all 
                 while ($row = $result->fetch_assoc()) { //Unsure if fetch_all would be better
                     //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
+                    echo "<hr>"; 
                     echo "<h3>" . $row['company_name'] . "</h3>"; //print out name of company, works for assoc
-                    echo " <p> <b>Cost for Hire</b>: $".$row['cost_for_hire']."</br>";
+                    echo " <p> <b>Cost for Hire</b>: $".number_format($row['cost_for_hire'])."</br>"; //number_format adds commas
                     echo " <b>Specialization</b>: ".$row['specialization']."</br>";
                     echo " <b>Zip Code</b>: ".$row['zipcode']."</br>";
-                    echo " <b>Phone</b>: ".$row['phone']."</br>";
+                    if(preg_match( '/(\d{3})(\d{3})(\d{4})$/',$row['phone'],  $matches ) )
+                        {
+                            $format = $matches[1] . '-' .$matches[2] . '-' . $matches[3];
+                        }
+                    echo " <b>Phone</b>: ".$format."</br>";
                     echo " <b>Email</b>: ".$row['email']."<br>";
                     echo " <b>Website</b>: ".$row['website']."</p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";
                     echo "</form>";
-                    echo "<hr>"; //unsure if hr break looks better or just a br
                 } //all of the names would be stored inside row
 
                 ?>
