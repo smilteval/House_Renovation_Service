@@ -43,7 +43,7 @@ include_once "../includes/dbconnect.inc.php";
                     echo " <b>Zip Code</b>: ".$row['zipcode']."</br>";
                     echo " <b>Phone</b>: ".$row['phone']."</br>";
                     echo " <b>Email</b>: ".$row['email']."<br>";
-                    echo " <b>Specialization</b>: ".$row['website']."</p>";
+                    echo " <b>Website</b>: ".$row['website']."</p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";

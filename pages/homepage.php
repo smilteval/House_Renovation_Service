@@ -28,15 +28,16 @@ include_once "../includes/dbconnect.inc.php";
     <title>Homepage</title>
 </head>
 <style>
-button[class="btn"]{
-    display: block;
+    button[class="btn"] {
+        display: block;
 
-}
-
+    }
 </style>
 
 <body>
-
+    <?php if (isset($_SESSION["username"])) {
+        echo "<h2>Welcome " . $_SESSION["username"] . "!</h2>";
+    } ?>
     <div class="container mt-4">
         <div class="row d-flex justify-content-center">
             <div class="col-md-9">
@@ -52,9 +53,7 @@ button[class="btn"]{
                 <!-- Search Fields -->
 
                 <div class="card p-4 mt-3">
-                <?php if(isset($_SESSION["username"])) {
-                    echo "Welcome ".$_SESSION["username"]."!";
-                }?>
+
 
                     <!-- Search bar for zipcode -->
                     <form method="POST" action="zipcode_search_results.php">
@@ -75,12 +74,12 @@ button[class="btn"]{
 
                     <!-- <h3 class="heading mt-5 text-center">Search By Address</h3> -->
                     <!-- <div class="d-flex justify-content-center px-5"> -->
-                        <!-- <div class="search"> -->
-                            <!-- <input type="text" class="search-input" placeholder="Enter your address..."> -->
-                            <!-- <button type="submit" class="btn search-icon"> -->
-                                <!-- <i class="fa fa-search"></i> -->
-                            <!-- </button> -->
-                        <!-- </div> -->
+                    <!-- <div class="search"> -->
+                    <!-- <input type="text" class="search-input" placeholder="Enter your address..."> -->
+                    <!-- <button type="submit" class="btn search-icon"> -->
+                    <!-- <i class="fa fa-search"></i> -->
+                    <!-- </button> -->
+                    <!-- </div> -->
                     <!-- </div> -->
 
                     <!-- Search bar for budget  -->
@@ -103,7 +102,8 @@ button[class="btn"]{
                     <h3 class="heading mt-5 text-center">Search By Specialization</h3>
 
                     <form method="POST" action="specialization_search_results.php">
-                        <div class="row mt-4 g-1 px-1 mb-5"> <!-- this is where we fix buttons? -->
+                        <div class="row mt-4 g-1 px-1 mb-5">
+                            <!-- this is where we fix buttons? -->
                             <div class="col-md-2">
                                 <button type="submit" name="specialization" value="Kitchen Renovation" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">

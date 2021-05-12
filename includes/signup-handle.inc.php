@@ -74,6 +74,7 @@
                 } else { // no problems in creating the account
                     echo "Your account is created"; 
                     // ** Maybe redirect the user to welcome page or login? **
+                    header ("Location: login.php");
                 }
             }
         }
