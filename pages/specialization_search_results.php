@@ -13,6 +13,16 @@ include_once "../includes/dbconnect.inc.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Specialization Search Results</title>
 </head>
+<style>
+    span{
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    span:hover {
+        text-decoration: none;
+    }
+</style>
 
 
 <body>
@@ -47,7 +57,7 @@ include_once "../includes/dbconnect.inc.php";
                     }
                     echo " <b>Phone</b>: ".$format."</br>";
                     echo " <b>Email</b>: ".$row['email']."<br>";
-                    echo " <b>Website</b>: ".$row['website']."</p>";
+                    echo " <b>Website</b>: <span>".$row['website']."</span></p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";

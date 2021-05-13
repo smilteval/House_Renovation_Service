@@ -67,6 +67,10 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
 
         <input type="submit" name="login" value="Login">
     </form>
+    <br>
+    <form action="signup.php" method="POST"> <!-- Button to link user to signup on the login page -->
+        <input type="submit" value="No Account? Signup"/>
+    </form>
 
 </body>
 

@@ -109,6 +109,11 @@ include "../includes/signup-handle.inc.php";
         <input type="submit" class='btn search-icon' name="signup" value="Signup">
 
     </form>
+    <br>
+    <br>
+    <form method = "POST" action="login.php"> <!-- Button to link user to login on the signup page -->
+        <input type="submit" value="Existing User? Login"/>
+    </form>
     </div>
 
 </body>

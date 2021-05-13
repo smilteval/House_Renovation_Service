@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../navbar.php";
-include "../includes/dbconnect.inc.php";
+// include "../includes/dbconnect.inc.php";
 
 ?>
 
@@ -55,19 +55,3 @@ include "../includes/dbconnect.inc.php";
 </body>
 
 </html>
-
-<?php
-$query = "INSERT INTO order_info (customer_id, contractor_id, order_date)";
-$query .= "VALUES(?,?,?)";
-
-$contractor_id = $_POST["id"];
-$customer_id = 1;
-$order_date = date('m/d/Y');
-
-$stmt = $conn->prepare($query);
-$stmt->bind_param("iis", $customer_id, $contractor_id, $order_date);
-$stmt->execute();
-$result = $stmt->get_result();
-
-var_dump($result);
-?>
