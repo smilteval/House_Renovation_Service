@@ -1,10 +1,26 @@
 <?php
 session_start();
 include "../navbar.php";
+?>
 
-echo "<h1>Your orders: </h1>";
 
-    //getting all the orders for logged in user
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+</head>
+
+<body>
+
+    <h3>Your Orders: </h3>
+
+    <?php
+
+    //getting all the orders for the logged in user
 
     $user_id = $_SESSION["userID"];
 
@@ -17,23 +33,22 @@ echo "<h1>Your orders: </h1>";
 
     $orders = $result->fetch_all(MYSQLI_ASSOC);
 
-    if ($result->num_rows === 0){
+    if ($result->num_rows === 0) {
         echo "nothing to show";
-    } 
-    else{
-        echo "<table border=1>
+    } else {
+        echo "<table>
         <tr>
             <th>ORDER_ID</th>
             <th>CONTRACTOR</th>
+            <th>SERVICE</th>
             <th>TOTAL PRICE</th>
             <th>ORDER DATE</th>
-            <th>PROJECT DURATION (in weeks)</th>
         </tr>";
 
         $order_counter = 0;
         foreach ($orders as $order) {
             echo "<tr>";
-            echo "<td>".$order["order_id"]."</td>";
+            echo "<td>" . $order["order_id"] . "</td>";
 
             //getting contractor name from the contractor id
 
@@ -46,13 +61,20 @@ echo "<h1>Your orders: </h1>";
             $stmt->execute();
             $result = $stmt->get_result();
 
-            $company_name = $result->fetch_assoc();
+            $company = $result->fetch_assoc();
 
-            echo "<td>".$company_name["company_name"]."</td>";
-            echo "<td>".$order["total_price"]."</td>";
-            echo "<td>".$order["order_date"]."</td>";
-            echo "<td>".$order["project_duration"]."</td>";
+            echo "<td>" . $company["company_name"] . "</td>";
+            echo "<td>" . $company["specialization"], "</td>";
+            echo "<td>" . $order["total_price"] . "</td>";
+            echo "<td>" . $order["order_date"] . "</td>";
+
+            echo "<td><input type='submit' name='submit' value='View'></td>";
+            
             echo "</tr>";
-        }  
+        }
         echo "</table>";
     }
+    ?>
+</body>
+
+</html>
