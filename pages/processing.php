@@ -4,7 +4,16 @@ include "../navbar.php";
 
 var_dump($_SESSION);
 
+if(!isset($_SESSION["username"])) { //go to login page if not logged in
+    header("Location: login.php");
+}
 
+$checkQ = "SELECT username FROM customer WHERE username = ?";
+
+            // //use prepare statements for these vars
+            // $stmt = $conn->prepare($checkQ);
+            // $stmt->bind_param("s",$username);
+            // $stmt->execute();
 
 $query = "INSERT INTO order_info (customer_id_fk, contractor_id, order_date)";
 $query .= "VALUES(?,?,?)";
