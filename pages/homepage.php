@@ -35,6 +35,15 @@ include_once "../includes/dbconnect.inc.php";
 </style>
 
 <body>
+    <?php
+
+    //if the user already had an order saved, bring one back to the order summary page
+    if ($_SESSION["room"] !== null) {
+        header("Location: order_summary.php");
+        $_SESSION["order saved"] = true;
+    }
+    ?>
+
     <?php if (isset($_SESSION["username"])) {
         echo "<h2>Welcome " . $_SESSION["username"] . "!</h2>";
     } ?>

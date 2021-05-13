@@ -33,6 +33,9 @@
         <li class="nav-item">
           <a class="nav-link" href="../includes/logout-handle.inc.php" target="">Logout</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/my_orders.php" target="">My Orders</a>
+        </li>
         <!-- If user is not logged in  -->
         <?php } else {  ?>
         <li class="nav-item">

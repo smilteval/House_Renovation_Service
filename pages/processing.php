@@ -4,6 +4,9 @@ include "../navbar.php";
 
 var_dump($_SESSION);
 
+if (!isset ($_SESSION["username"])){
+    header ("Location: login.php");
+} 
 
 
 $query = "INSERT INTO order_info (customer_id_fk, contractor_id, order_date)";
