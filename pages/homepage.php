@@ -105,26 +105,26 @@ include_once "../includes/dbconnect.inc.php";
                         <div class="row mt-4 g-1 px-1 mb-5">
                             <!-- this is where we fix buttons? -->
                             <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Kitchen Renovation" class="btn">
+                                <button type="submit" name="specialization" value="Lighting" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
                                         <img src="../styling/icons/kitchen.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Kitchen Renovation </div>
+                                        <div class="text-center mg-text pt-1"> Lighting </div>
                                     </div>
                                 </button>
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Bathroom Renovation" class="btn">
+                                <button type="submit" name="specialization" value="Electrical" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
                                         <img src="../styling/icons/bathtub.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Bathroom Renovation </div>
+                                        <div class="text-center mg-text pt-1"> Electrical </div>
                                     </div>
                                 </button>
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Full House Renovation" class="btn">
+                                <button type="submit" name="specialization" value="Full Room" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
                                         <img src="../styling/icons/house.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Full House Renovation </div>
+                                        <div class="text-center mg-text pt-1"> Full Room </div>
                                     </div>
                                 </button>
                             </div>

@@ -1,8 +1,6 @@
 <?php
-
-include "../includes/dbconnect.inc.php";
 session_start();
-
+include "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +19,7 @@ session_start();
     <div class="container">
         
 
-        <form id="room_service_form" novalidate method="post">
+        <form action="order_summary.php" id="room_service_form" novalidate method="post">
 
             <?php
 
@@ -40,12 +38,18 @@ session_start();
             );
 
             //count the number of rooms selected from the previous form
+            // var_dump($_POST);
 
+            // $_SESSION[$room_selection[1]] = "example"; //TEST 
+            var_dump($_POST);
             $selected_room_count = count($_POST["rooms"]);
 
             //count the number of rooms with services already selected
 
             $current_room_count = 0;
+
+
+            
 
 
             if (isset($_POST["submit"])) {
@@ -55,13 +59,13 @@ session_start();
                 foreach ($room_selection as $room_name) {
                     foreach ($_POST["rooms"] as $room) {
                         if ($room === $room_name) {
-
+                            $_SESSION[$room_name] = NULL;
                             echo "<h2> Select Services for your <i>$room_name: </i></h2><br>";
                             echo '<form method="POST" id="form"';
 
                             include "service_selection.php";
 
-                            //$_SESSION[$room_name] = $_POST["services"];
+                            //$_SESSION[$room_name] = $_POST["services[]"];
                             
                             echo "<input type='submit' name='submit service' value='Submit'/>";
                             echo "</form>";

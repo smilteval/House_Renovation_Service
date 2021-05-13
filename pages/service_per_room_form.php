@@ -1,8 +1,6 @@
 <?php
-
-include "../includes/dbconnect.inc.php";
 session_start();
-
+include "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +51,12 @@ session_start();
             //count the number of rooms with services already selected
 
             $current_room_count = 0;
+
+            while($current_room_count < $selected_room_count){ //when we go onto next room for renovation it will NOT remember POST["rooms"]. Put
+                $_SESSION[$_POST["rooms"]] = NULL;
+            }
+
+            var_dump($_SESSION);
 
 
             if (isset($_POST["submit"])) {

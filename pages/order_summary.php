@@ -1,6 +1,6 @@
 <?php
-include "../navbar.php";
 session_start();
+include "../navbar.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +18,22 @@ session_start();
     <a href="http://localhost/house_renovation_service/pages/homepage.php" class="btn btn-primary" id="order-button">
         Complete Order
     </a>
+    <br>
 
     <?php
     
     if(isSet($_POST["submit"])){
+        // var_dump($_POST["rooms"]);
 
-        $_SESSION[$_SESSION["room name"]] = $_POST["services"];
 
-        var_dump($_SESSION);
+        $_SESSION["room"] = $_POST["rooms"]; //save the room into the session, this is saved as an array: Array { [0]=> "Bathroom" [1] => "Kitchen" }
+        echo "Company: ".$_SESSION["company_name"]."<br>";
+        echo "Service to be done: ".$_SESSION["specialization"]."<br>";
+        echo "Room(s): ".implode(", ", $_SESSION["room"])."<br>"; //implode function adds a space between each array
+
+
+        // var_dump($_SESSION);
+        // var_dump($_POST);
 
     
     }

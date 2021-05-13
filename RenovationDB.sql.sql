@@ -47,8 +47,8 @@ FOREIGN KEY (room_id_fk) REFERENCES room(room_id) );
 INSERT INTO customer (first_name,last_name,address,zipcode,budget) VALUES ('Smilte','Valasinaite','123 Main St.','12345','50000');
 INSERT INTO customer (first_name,last_name,address,zipcode,budget) VALUES ('Vincenzo','Mezzio','456 Home Ave.','67891','100000');
 
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('Your Home Inc.','Full House Renovation','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('The Best in Town','Kitchen Remodeling','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('Your Home Inc.','Full Room','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('The Best in Town','Electrical','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('Make Magic Happen','Flooring','7000','50214','1542227849','magichome@gmail.com','www.makemagichappen.org');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website) VALUES ('Interni Lucidi','Interior Design','6000','11111','6461239876','internilucidi@gmail.com','www.internilucidi.com');
 
