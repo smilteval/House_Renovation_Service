@@ -16,7 +16,7 @@
             $pwd = sanitizeString($_POST["password"]);
             // $email = sanitizeString($_POST["email"]);
 
-            $query1 = "SELECT username, password FROM customer "; //read from the customer table, not users table!
+            $query1 = "SELECT customer_id, username, password FROM customer "; //read from the customer table, not users table!
             $query1 .= "WHERE username = ? LIMIT 1";
 
             $stmt = $conn->prepare($query1);

@@ -41,7 +41,7 @@ include "../includes/signup-handle.inc.php";
     if (!empty($error)) { //prints errors if there are any 
         echo "<ul>";
         foreach ($error as $e) {
-            echo "<li>$e</li>";
+            echo "<li><small>$e</small></li>";
         }
         echo "</ul>";
     }

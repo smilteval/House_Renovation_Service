@@ -19,7 +19,7 @@ include "../navbar.php";
     <div class="container mt-5">
 
         <?php 
-            $query = "SELECT company_name, specialization FROM contractor WHERE contractor_id = ?"; //POST has the contractor id saved, let's get other info with it
+            $query = "SELECT company_name, specialization, cost_for_hire FROM contractor WHERE contractor_id = ?"; //POST has the contractor id saved, let's get other info with it
             $theid = $_POST["id"];
             $stmt = $conn->prepare($query);
             $stmt->bind_param("s", $theid);
@@ -30,6 +30,7 @@ include "../navbar.php";
             // var_dump($row);
             $_SESSION["company_name"] = $row["company_name"]; //company name saved into session
             $_SESSION["specialization"] = $row["specialization"]; //company sepcialization saved into session
+            $_SESSION["cost_for_hire"] = $row["cost_for_hire"]; //cost for hire saved into session
             var_dump($_SESSION);
         ?>
 

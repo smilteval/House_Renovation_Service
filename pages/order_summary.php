@@ -16,9 +16,7 @@ include "../navbar.php";
 <body>
     <div class="container">
         <h3>Your order summary:</h3>
-        <a href="http://localhost/house_renovation_service/pages/homepage.php" class="btn btn-primary" id="order-button">
-            Complete Order
-        </a>
+        
         <br>
         <div class="row">
                 
@@ -39,13 +37,16 @@ include "../navbar.php";
                     }
                     echo "<br>"; //username if logged in
                     echo "<b>Company:</b> ".$_SESSION["company_name"]."<br>";
+                    echo "<b>Company Cost:</b> $".number_format($_SESSION["cost_for_hire"])."<br>";
                     echo "<b>Service:</b> ".$_SESSION["specialization"]."<br>";
                     echo "<b>Room(s):</b><br> "; //.implode(", ", $_SESSION["room"])."<br>"; //implode function adds a space between each array
+                    $totalcost = $_SESSION["cost_for_hire"];
+                    $roomprice = 1000; //static value for now
                     foreach($_SESSION["room"] as $room){ //printing out each room one by one
-                        echo $room."<br>";
-
+                        echo $room."  $".number_format($roomprice)."<br>";
+                        $totalcost += $roomprice;
                     }
-
+                    echo "<b>Total Cost:</b> $".number_format($totalcost); //total price includes company cost and room prices
                     var_dump($_SESSION);
                     // var_dump($_POST);
 
@@ -53,25 +54,13 @@ include "../navbar.php";
                 }
 
                 ?>
+                <a href="processing.php" class="btn btn-primary" id="login-button">
+                    Complete Order
+                </a>
+
             </div>
         </div>
     </div>
 </body>
 
 </html>
-
-<?php
-$query = "INSERT INTO order_info (customer_id, contractor_id, order_date)";
-$query .= "VALUES(?,?,?)";
-
-$contractor_id = $_POST["id"];
-$customer_id = 1;
-$order_date = date('m/d/Y');
-
-$stmt = $conn->prepare($query);
-$stmt->bind_param("iis", $customer_id, $contractor_id, $order_date);
-$stmt->execute();
-$result = $stmt->get_result();
-
-var_dump($result);
-?>

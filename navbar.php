@@ -34,7 +34,7 @@
           <a class="nav-link" href="../includes/logout-handle.inc.php" target="">Logout</a>
         </li>
         <!-- If user is not logged in  -->
-        <?php } else { //FIX ME ?>
+        <?php } else {  ?>
         <li class="nav-item">
           <a class="nav-link" href="signup.php" target="">Signup</a>
         </li>
