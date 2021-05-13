@@ -54,9 +54,13 @@ include "../navbar.php";
                 }
 
                 ?>
-                <a href="processing.php" class="btn btn-primary" id="login-button">
+                <form action="processing.php" method="post">
+                <?php echo "<input type='hidden' name='totalcost' value='$totalcost' > </input>"?>
+                    <input type="submit" name="submit" class="btn btn-primary" id="login-button" value="Complete Order" />
+                </form>
+                <!-- <a href="processing.php" class="btn btn-primary" id="login-button">
                     Complete Order
-                </a>
+                </a> -->
 
             </div>
         </div>
