@@ -42,20 +42,23 @@ include "../navbar.php";
                     echo "<b>Room(s):</b><br> "; //.implode(", ", $_SESSION["room"])."<br>"; //implode function adds a space between each array
                     $totalcost = $_SESSION["cost_for_hire"];
                     $roomprice = 1000; //static value for now
+                    $totalrooms = 0; //counts total number of rooms
                     foreach ($_SESSION["room"] as $room) { //printing out each room one by one
                         echo $room . "  $" . number_format($roomprice) . "<br>";
                         $totalcost += $roomprice;
+                        $totalrooms += 1;
                     }
                     echo "<b>Total Cost:</b> $" . number_format($totalcost); //total price includes company cost and room prices
                     var_dump($_SESSION);
                     // var_dump($_POST);
-
+                    var_dump($totalrooms);
 
                 }
 
                 ?>
                 <form action="processing.php" method="post">
-                <?php echo "<input type='hidden' name='totalcost' value='$totalcost' > </input>"?>
+                <?php echo "<input type='hidden' name='totalcost' value='$totalcost' > </input>"?> <!-- Saving total cost and rooms into POST-->
+                <?php echo "<input type='hidden' name='totalrooms' value='$totalrooms' > </input>"?>
                     <input type="submit" name="submit" class="btn btn-primary" id="login-button" value="Complete Order" />
                 </form>
                 <!-- <a href="processing.php" class="btn btn-primary" id="login-button">
