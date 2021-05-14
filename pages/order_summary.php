@@ -35,9 +35,6 @@ include "../navbar.php";
             <div class="col-md-12">
 
                 <?php
-                var_dump($_SESSION);
-                echo "<br>";
-                var_dump($_POST);
 
                 if (isset($_SESSION["room"])) { //(isset($_POST["submit"]))
                         //check if rooms are set (which have been set inside handler)

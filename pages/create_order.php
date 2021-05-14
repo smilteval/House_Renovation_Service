@@ -31,7 +31,6 @@ include "../includes/create_order_handle.inc.php";
     <div class="container mt-4">
 
         <?php
-        var_dump($_POST);
         if(isset($_POST["id"])){
         $contractorId = $_POST["id"];
 
@@ -55,7 +54,6 @@ include "../includes/create_order_handle.inc.php";
 
         <h3 class = "mb-4">Create your order here:</h3>
         <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $_SESSION['specialization']; ?></span> service provided by <span><?php echo $_SESSION["company_name"]?></span>?</h5>
-        <?php var_dump($_SESSION); ?>
         <!-- select rooms for the service -->
         <form action="create_order.php" method="POST">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
