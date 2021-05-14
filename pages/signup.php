@@ -1,6 +1,5 @@
 <?php
 include "../includes/signup-handle.inc.php";
-include "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
