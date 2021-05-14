@@ -47,7 +47,7 @@
             $last_name = sanitizeString($_POST['last_name']);
             $address = sanitizeString($_POST['address']);
             $city = sanitizeString($_POST['city']);
-            $ctate = sanitizeString($_POST['state']);
+            $state = sanitizeString($_POST['state']);
             $zipcode = sanitizeString($_POST['zipcode']);
             $budget = sanitizeString($_POST['budget']);
 
@@ -73,7 +73,7 @@
                 $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
                 $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, city, state, zipcode, budget)";
-                $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
+                $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
 
                 $stmt2 = $conn->prepare($insertQ);
                 $stmt2->bind_param("sssssssii",$username, $hashed_pwd, $first_name, $last_name, $address, $city, $state, $zipcode, $budget);
