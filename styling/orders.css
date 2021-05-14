@@ -6,17 +6,35 @@ table {
 }
 
 thead tr {
-  background-color: #0070f0;
-  color: #ffffff;
-}
-
-th,
-td {
-  padding: 0px 50px;
+  background-color: #0070F0;
+  color: #fff;
 }
 
 tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#order-id{
+  width: 80px;
+}
+
+#contractor{
+  width: 180px;
+}
+
+#total-price{
+width: 120px;
+}
+
+#order-date{
+  width: 120px;
+}
+#duration{
+  width: 80px;
+}
+
+th, td{
+  padding-left: 20px;
 }
 
 tbody tr:nth-of-type(even) {
@@ -24,5 +42,5 @@ tbody tr:nth-of-type(even) {
 }
 
 tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #00D4F0;
 }

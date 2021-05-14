@@ -54,7 +54,14 @@ include "../navbar.php";
             echo "
             <table>
                 <thead>
-                    <tr><th>ORDER_ID</th><th>CONTRACTOR</th><th>SERVICE</th><th>TOTAL PRICE</th><th>ORDER DATE</th><th>DURATION (in weeks)</th><th>ROOMS SELECTED</th></tr>
+                    <tr>
+                    <th id = 'order-id'>ORDER_ID</th>
+                    <th id = 'contractor'>CONTRACTOR</th>
+                    <th id = 'specialization'>SERVICE</th>
+                    <th id = 'total-price'>TOTAL PRICE</th>
+                    <th id = 'order-date'>ORDER DATE</th>
+                    <th id = 'duration'>DURATION</th>
+                    <th id = 'rooms'>ROOMS SELECTED</th></tr>
                 <thead>
                 <tbody>";
 
@@ -67,7 +74,7 @@ include "../navbar.php";
 
                 //display order info
                 echo "<tr>";
-                echo "<td>" . $order_id . "</td>";
+                echo "<td id = 'order-id'>" . $order_id . "</td>";
 
                 //prepare values for the query2
                 $company_id = $order["contractor_id_fk"]; //get contractor name from the contractor id
@@ -82,14 +89,14 @@ include "../navbar.php";
                 $company = $result->fetch_assoc();
 
                 //display company info
-                echo "<td>" . $company["company_name"] . "</td>";
-                echo "<td>" . $company["specialization"], "</td>";
-                echo "<td>$" . number_format($order["total_price"]) . "</td>";
-                echo "<td>" . $order["order_date"] . "</td>";
-                echo "<td>" . $order["project_duration"] . "</td>";
+                echo "<td id = 'contractor'>" . $company["company_name"] . "</td>";
+                echo "<td id = 'specialization'>" . $company["specialization"], "</td>";
+                echo "<td id = 'total-price'>$" . number_format($order["total_price"]) . "</td>";
+                echo "<td id = 'order-date'>" . $order["order_date"] . "</td>";
+                echo "<td id = 'duration'>" . $order["project_duration"] . " weeks</td>";
 
                 //display service info
-                echo "<td>";
+                echo "<td id = 'rooms'>";
 
                 //select service from db that is connected to the order
                 $query = "SELECT service_id FROM service WHERE order_id_fk = ?";

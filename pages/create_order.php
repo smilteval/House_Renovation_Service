@@ -57,7 +57,7 @@ include "../includes/create_order_handle.inc.php";
         <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $_SESSION['specialization']; ?></span> service provided by <span><?php echo $_SESSION["company_name"]?></span>?</h5>
         <?php var_dump($_SESSION); ?>
         <!-- select rooms for the service -->
-        <form action="order_summary.php" method="POST">
+        <form action="create_order.php" method="POST">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Bedroom"> Bedroom </label><br>
             <label><input type="checkbox" name="rooms[]" value="Dining Room"> Dining Room </label><br>
