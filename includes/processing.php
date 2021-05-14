@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-include "../navbar.php";
+include "dbconnect.inc.php";
 
 //go to login page if not logged in
 if (!isset($_SESSION["username"])) {
@@ -10,16 +10,14 @@ if (!isset($_SESSION["username"])) {
 } else {
 
     //prepare values for the query1
-    $_SESSION["totalcost"] = $_POST["totalcost"]; //get the total cost from POST, put it into session
     $intver = (int)$_POST["totalrooms"]; //turn total room from a string to number
-    $_SESSION["totalroom"] = $intver; //number of total rooms in session
 
     $contractor_id = $_SESSION["contractor_id"];
     $customer_id = $_SESSION["userID"];
-    $totalprice = $_SESSION["totalcost"];
+    $totalprice = $_POST["totalcost"];
     date_default_timezone_set('America/New_York'); //we need to set time zone in order to get correct time
     $order_date = date('Y-m-d'); //current date
-    $project_duration = $_SESSION["totalroom"];
+    $project_duration = $intver;
 
     //insert order info into the order_info table
     $query = "INSERT INTO order_info (customer_id_fk, contractor_id_fk, total_price, order_date, project_duration)";

@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../navbar.php";
-include "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
