@@ -68,8 +68,12 @@ include "../navbar.php";
             echo "<td>$" . number_format($order["total_price"]). "</td>";
             echo "<td>" . $order["order_date"] . "</td>";
 
+            //redirect user
+            echo "<form>";
+
             echo "<td><input type='submit' name='submit' value='View'></td>";
-            
+            echo "<form>";
+
             echo "</tr>";
         }
         echo "</table>";

@@ -32,7 +32,7 @@ include "../navbar.php";
             $_SESSION["specialization"] = $row["specialization"]; //company sepcialization saved into session
             $_SESSION["cost_for_hire"] = $row["cost_for_hire"]; //cost for hire saved into session
             $_SESSION["contractor_id"] = $row["contractor_id"];
-            var_dump($_SESSION);
+            // var_dump($_SESSION);
         ?>
 
         <h3>Create your order here:</h3>

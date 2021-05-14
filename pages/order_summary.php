@@ -49,9 +49,9 @@ include "../navbar.php";
                         $totalrooms += 1;
                     }
                     echo "<b>Total Cost:</b> $" . number_format($totalcost); //total price includes company cost and room prices
-                    var_dump($_SESSION);
+                    // var_dump($_SESSION);
                     // var_dump($_POST);
-                    var_dump($totalrooms);
+                    // var_dump($totalrooms);
 
                 }
 
