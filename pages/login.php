@@ -47,7 +47,7 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
     ?>
     <form action="login.php" method="POST"> <!-- changed action to login.php, previously was on homepage.php. I guess the form never finished and just instantly went to homepage -->
         <label>Username: 
-            <input type="text" name="username" value="<?php echo $username ?? ''; ?>">
+            <input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>">
     <br>
             <small>
                 <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
@@ -59,7 +59,7 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
             <input type="password" name="password" value="<?php echo $password ?? ''; ?>"> <!-- password had one character already filled in because of the white space between ?> and ". Strange -->
         <br>
             <small>
-                <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
+                <?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?>
             </small>
         </label>
     <br>
