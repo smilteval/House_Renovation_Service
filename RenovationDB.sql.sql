@@ -17,12 +17,12 @@ state varchar(50) );
 CREATE TABLE customer
 (customer_id integer AUTO_INCREMENT PRIMARY KEY,
 username varchar(255) UNIQUE,
-password varchar(255)
+password varchar(255),
 first_name varchar(15),
 last_name varchar(15),
 address varchar(50),
 zipcode varchar(5),
-budget decimal(8,2) 
+budget decimal(8,2),
 city varchar(50),
 state varchar(50) );
 
@@ -53,15 +53,15 @@ FOREIGN KEY (service_id_fk) REFERENCES service(service_id) );
 
 
 
-INSERT INTO customer (first_name,last_name,username,address,city,state,zipcode,budget) VALUES ('Smilte','Valasinaite','sval','123 Main St.','Brooklyn','New York','12345','50000');
+INSERT INTO customer (first_name,last_name,username,address,city,state,zipcode,budget) VALUES ('Smilte','Valasinaite','svalasinaite','123 Main St.','Brooklyn','New York','12345','50000');
 INSERT INTO customer (first_name,last_name,username,address,city,state,zipcode,budget) VALUES ('Vincenzo','Mezzio','vmezzio','456 Home Ave.','Staten Island','New York','67891','100000');
 
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Your Home Inc.','Full Room','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com','New York City','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('The Best in Town','Electrical','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com','Brooklyn','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Your Home Inc.','Plumbing','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com','New York City','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('The Best in Town','Cleaning','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com','Brooklyn','New York');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Make Magic Happen','Flooring','7000','50214','1542227849','magichome@gmail.com','www.makemagichappen.org','Staten Island','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Interni Lucidi','Interior Design','6000','11111','6461239876','internilucidi@gmail.com','www.internilucidi.com','New York City','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Interni Lucidi','Decoration','6000','11111','6461239876','internilucidi@gmail.com','www.internilucidi.com','New York City','New York');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Brush Brothers','Painting','5000','67891','3471239876','brushbrothers@gmail.com','www.brushbrothers.com','Brooklyn','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Lit Up','Lighting','4000','50214','2019873456','litup@gmail.com','www.litup.com','Staten Island','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Amogus','Electrical','4000','50214','2019873456','amogus@gmail.com','www.amogus.com','Staten Island','New York');
 
 INSERT INTO order_info (customer_id_fk,contractor_id_fk,total_price,order_date,project_duration) VALUES ('3','1','30000','2021-1-1','20 weeks');
 
