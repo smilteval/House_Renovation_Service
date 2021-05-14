@@ -35,14 +35,11 @@ include "../navbar.php";
             <div class="col-md-12">
 
                 <?php
-                if(isset($_SESSION["submit"])){
-                    $_POST["submit"] = $_SESSION["submit"];
-                }
 
-                if (isset($_POST["submit"])) {
-
+                if (isset($_SESSION["room"])) { //(isset($_POST["submit"]))
+                        //check if rooms are set (which have been set inside handler)
                     //save selected rooms in the session
-                    $_SESSION["room"] = $_POST["rooms"];
+                    // $_SESSION["room"] = $_POST["rooms"];
 
                     //if the user is not logged in, display a warning message
                     if (empty($_SESSION["username"])) {
