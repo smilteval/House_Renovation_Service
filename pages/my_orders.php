@@ -65,7 +65,7 @@ include "../navbar.php";
 
             echo "<td>" . $company["company_name"] . "</td>";
             echo "<td>" . $company["specialization"], "</td>";
-            echo "<td>" . $order["total_price"] . "</td>";
+            echo "<td>$" . number_format($order["total_price"]). "</td>";
             echo "<td>" . $order["order_date"] . "</td>";
 
             //redirect user

@@ -22,6 +22,7 @@ $query .= "VALUES(?,?,?,?,?)";
 $contractor_id = $_SESSION["contractor_id"]; //contractor id
 $customer_id = $_SESSION["userID"]; //userID is the customer id
 $totalprice = $_SESSION["totalcost"]; //totalprice
+date_default_timezone_set('America/New_York'); //we need to set time zone in order to get correct time
 $order_date = date('Y-m-d'); //current date
 $project_duration = $_SESSION["totalroom"];
 
