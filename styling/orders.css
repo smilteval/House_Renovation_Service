@@ -6,18 +6,19 @@ table {
 }
 
 thead tr {
-  background-color: #0070F0;
+  background-color: #0070f0;
   color: #ffffff;
 }
 
 th,
 td {
-  padding: 12px 15px;
+  padding: 0px 50px;
 }
 
 tbody tr {
   border-bottom: 1px solid #dddddd;
 }
+
 tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
