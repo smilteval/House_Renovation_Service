@@ -28,7 +28,6 @@ include "../navbar.php";
 <body>
     <div class="container">
         <h3>Results for city: <?php echo ($_POST["city"]); ?> </h3>
-        <br>
 
         <!-- display contractor list -->
         <div class="row">
@@ -75,7 +74,6 @@ include "../navbar.php";
 
             </div>
         </div>
-        <hr>
     </div>
 </body>
 

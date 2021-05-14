@@ -30,7 +30,6 @@ include_once "../includes/dbconnect.inc.php";
 <body>
     <div class="container">
         <h3>Results for budget: <?php echo "$" . number_format($_POST["budget"]); ?> </h3>
-        <br>
 
         <!-- display contractor list -->
         <div class="row">
@@ -77,7 +76,6 @@ include_once "../includes/dbconnect.inc.php";
 
             </div>
         </div>
-        <hr>
     </div>
 </body>
 

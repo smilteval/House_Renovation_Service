@@ -23,8 +23,6 @@ include "includes/dbconnect.inc.php";
   <!-- Our CSS -->
 
   <link rel="stylesheet" href="../styling/search_results.css" />
-
-  <title>Navigation Bar</title>
 </head>
 
 <body>
@@ -41,9 +39,9 @@ include "includes/dbconnect.inc.php";
       <ul class="navbar-nav mr-auto">
 
         <!-- Home -->
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="http://localhost/house_renovation_service/pages/homepage.php">Home <span class="sr-only">(current)</span></a>
-        </li>
+        </li> -->
 
         <!-- If user is logged in, show logout and my orders-->
         <?php if (isset($_SESSION["username"])) { ?>
