@@ -35,6 +35,9 @@ include "../navbar.php";
             <div class="col-md-12">
 
                 <?php
+                if(isset($_SESSION["submit"])){
+                    $_POST["submit"] = $_SESSION["submit"];
+                }
 
                 if (isset($_POST["submit"])) {
 
