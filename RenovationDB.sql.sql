@@ -51,11 +51,9 @@ service_id_fk integer,
 room_price decimal (8,2),
 FOREIGN KEY (service_id_fk) REFERENCES service(service_id) );
 
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Your Home Inc.','Full Room','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com','New York City','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('The Best in Town','Electrical','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com','Brooklyn','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Your Home Inc.','Plumbing','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com','New York City','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('The Best in Town','Cleaning','5000','67891','6460002334','bestintown@gmail.com','www.bestintown.com','Brooklyn','New York');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Make Magic Happen','Flooring','7000','50214','1542227849','magichome@gmail.com','www.makemagichappen.org','Staten Island','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Interni Lucidi','Interior Design','6000','11111','6461239876','internilucidi@gmail.com','www.internilucidi.com','New York City','New York');
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Interni Lucidi','Decoration','6000','11111','6461239876','internilucidi@gmail.com','www.internilucidi.com','New York City','New York');
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Brush Brothers','Painting','5000','67891','3471239876','brushbrothers@gmail.com','www.brushbrothers.com','Brooklyn','New York');
-INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Lit Up','Lighting','4000','50214','2019873456','litup@gmail.com','www.litup.com','Staten Island','New York');
-
-
+INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Amogus','Electrical','4000','50214','2019873456','amogus@gmail.com','www.amogus.com','Staten Island','New York');

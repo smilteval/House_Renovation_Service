@@ -14,11 +14,12 @@ include_once "../includes/dbconnect.inc.php";
     <title>Specialization Search Results</title>
 </head>
 <style>
-    span{
+    span {
         color: blue;
         cursor: pointer;
         text-decoration: underline;
     }
+
     span:hover {
         text-decoration: none;
     }
@@ -32,7 +33,7 @@ include_once "../includes/dbconnect.inc.php";
 
         <!-- Contractor -->
         <div class="row">
-            
+
             <div class="col-md-5">
 
                 <?php //displaying contractors by their zipcode
@@ -48,16 +49,16 @@ include_once "../includes/dbconnect.inc.php";
                     //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
                     echo "<hr>"; //unsure if hr break looks better or just a br
                     echo "<h3>" . $row['company_name'] . "</h3>"; //print out name of company, works for assoc
-                    echo " <p> <b>Cost for Hire</b>: $".number_format($row['cost_for_hire'])."</br>";
-                    echo " <b>Specialization</b>: ".$row['specialization']."</br>";
-                    echo " <b>Zip Code</b>: ".$row['zipcode']."</br>";
-                    if(preg_match( '/(\d{3})(\d{3})(\d{4})$/',$row['phone'],  $matches ) )
-                    {
-                        $format = $matches[1] . '-' .$matches[2] . '-' . $matches[3];
+                    echo " <p> <b>Cost for Hire</b>: $" . number_format($row['cost_for_hire']) . "</br>";
+                    echo " <b>Specialization</b>: " . $row['specialization'] . "</br>";
+                    echo " <b>Zip Code</b>: " . $row['zipcode'] . "</br>";
+                    if (preg_match('/(\d{3})(\d{3})(\d{4})$/', $row['phone'],  $matches)) {
+                        $format = $matches[1] . '-' . $matches[2] . '-' . $matches[3];
                     }
-                    echo " <b>Phone</b>: ".$format."</br>";
-                    echo " <b>Email</b>: ".$row['email']."<br>";
-                    echo " <b>Website</b>: <span>".$row['website']."</span></p>";
+                    echo " <b>City</b>: " . $row["city"] . "<br>";
+                    echo " <b>Phone</b>: " . $format . "</br>";
+                    echo " <b>Email</b>: " . $row['email'] . "<br>";
+                    echo " <b>Website</b>: <span>" . $row['website'] . "</span></p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";
@@ -66,7 +67,7 @@ include_once "../includes/dbconnect.inc.php";
 
                 ?>
 
-                
+
             </div>
         </div>
         <hr>

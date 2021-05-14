@@ -14,11 +14,12 @@ include_once "../includes/dbconnect.inc.php";
     <title>Budget Search Results</title>
 </head>
 <style>
-    span{
+    span {
         color: blue;
         cursor: pointer;
         text-decoration: underline;
     }
+
     span:hover {
         text-decoration: none;
     }
@@ -45,18 +46,18 @@ include_once "../includes/dbconnect.inc.php";
                 //TODO: Change fetch_assoc to fetch_all 
                 while ($row = $result->fetch_assoc()) { //Unsure if fetch_all would be better
                     //var_dump($row); //array(1) { [0]=> array(1) { [0]=> string(14) "Your Home Inc." } }
-                    echo "<hr>"; 
+                    echo "<hr>";
                     echo "<h3>" . $row['company_name'] . "</h3>"; //print out name of company, works for assoc
-                    echo " <p> <b>Cost for Hire</b>: $".number_format($row['cost_for_hire'])."</br>"; //number_format adds commas
-                    echo " <b>Specialization</b>: ".$row['specialization']."</br>";
-                    echo " <b>Zip Code</b>: ".$row['zipcode']."</br>";
-                    if(preg_match( '/(\d{3})(\d{3})(\d{4})$/',$row['phone'],  $matches ) )
-                        {
-                            $format = $matches[1] . '-' .$matches[2] . '-' . $matches[3];
-                        }
-                    echo " <b>Phone</b>: ".$format."</br>";
-                    echo " <b>Email</b>: ".$row['email']."<br>";
-                    echo " <b>Website</b>: <span>".$row['website']."</span></p>";
+                    echo " <p> <b>Cost for Hire</b>: $" . number_format($row['cost_for_hire']) . "</br>"; //number_format adds commas
+                    echo " <b>Specialization</b>: " . $row['specialization'] . "</br>";
+                    echo " <b>Zip Code</b>: " . $row['zipcode'] . "</br>";
+                    if (preg_match('/(\d{3})(\d{3})(\d{4})$/', $row['phone'],  $matches)) {
+                        $format = $matches[1] . '-' . $matches[2] . '-' . $matches[3];
+                    }
+                    echo " <b>City</b>: " . $row["city"] . "<br>";
+                    echo " <b>Phone</b>: " . $format . "</br>";
+                    echo " <b>Email</b>: " . $row['email'] . "<br>";
+                    echo " <b>Website</b>: <span>" . $row['website'] . "</span></p>";
                     //var_dump($row);
                     echo "<form action= 'create_order.php' method='POST'> ";
                     echo "<button type='submit' class='btn search-icon' name='id' value='" . $row['contractor_id'] . "'>Create an Order</button>";
@@ -64,7 +65,7 @@ include_once "../includes/dbconnect.inc.php";
                 } //all of the names would be stored inside row
 
                 ?>
-                
+
 
             </div>
         </div>
