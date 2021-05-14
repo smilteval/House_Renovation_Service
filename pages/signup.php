@@ -54,7 +54,7 @@ include "../includes/signup-handle.inc.php";
         <form action="signup.php" method="POST">
             <!-- use post method for sensitive data-->
             <label>Username:
-                <input type="text" name="username" value="<?php echo $username ?? ''; ?>">
+                <input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
@@ -70,7 +70,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>First Name:
-                <input type="text" name="first_name" value="<?php echo $first_name ?? ''; ?>">
+                <input type="text" name="first_name" value="<?php echo (isset($_POST['first_name'])) ? $_POST['first_name'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['first_name'])) ? $errors['first_name'] : ''; ?>
@@ -78,7 +78,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>Last Name:
-                <input type="text" name="last_name" value="<?php echo $last_name ?? ''; ?>">
+                <input type="text" name="last_name" value="<?php echo (isset($_POST['last_name'])) ? $_POST['last_name'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['last_name'])) ? $errors['last_name'] : ''; ?>
@@ -86,7 +86,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>Address:
-                <input type="text" name="address" value="<?php echo $address ?? ''; ?>">
+                <input type="text" name="address" value="<?php echo (isset($_POST['address'])) ? $_POST['address'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['address'])) ? $errors['address'] : ''; ?>
@@ -94,7 +94,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>City:
-                <input type="text" name="city" value="<?php echo $city ?? ''; ?>">
+                <input type="text" name="city" value="<?php echo (isset($_POST['city'])) ? $_POST['city'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['city'])) ? $errors['city'] : ''; ?>
@@ -102,7 +102,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>State:
-                <input type="text" name="state" value="<?php echo $state ?? ''; ?>">
+                <input type="text" name="state" value="<?php echo (isset($_POST['state'])) ? $_POST['state'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['state'])) ? $errors['state'] : ''; ?>
@@ -110,7 +110,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>Zip Code:
-                <input type="number" name="zipcode" value="<?php echo $zipcode ?? ''; ?>">
+                <input type="number" name="zipcode" value="<?php echo (isset($_POST['zipcode'])) ? $_POST['zipcode'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['zipcode'])) ? $errors['zipcode'] : ''; ?>
@@ -118,7 +118,7 @@ include "../includes/signup-handle.inc.php";
             </label>
             <br>
             <label>Budget:
-                <input type="number" name="budget" value="<?php echo $budget ?? ''; ?>">
+                <input type="number" name="budget" value="<?php echo (isset($_POST['budget'])) ? $_POST['budget'] : ''; ?>">
                 <br>
                 <small>
                     <?php echo (isset($errors['budget'])) ? $errors['budget'] : ''; ?>
