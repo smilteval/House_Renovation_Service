@@ -27,12 +27,6 @@ include_once "../includes/dbconnect.inc.php";
 
     <title>Homepage</title>
 </head>
-<style>
-    button[class="btn"] {
-        display: block;
-
-    }
-</style>
 
 <body>
     <?php
@@ -63,10 +57,8 @@ include_once "../includes/dbconnect.inc.php";
 
                 <div class="card p-4 mt-3">
 
-
                     <!-- Search bar for zipcode -->
                     <form method="POST" action="zipcode_search_results.php">
-                        <!-- POST does not display the data inside http header. Must make sure we protect the input with handleform -->
                         <h3 class="heading mt-5 text-center">Search By Zip Code</h3>
                         <div class="d-flex justify-content-center px-5">
                             <div class="search">
@@ -78,18 +70,18 @@ include_once "../includes/dbconnect.inc.php";
                         </div>
                     </form>
 
-                    <!-- Search bar for address  -->
-                    <!-- I'm sorry I had to cut this from the project -->
-
-                    <!-- <h3 class="heading mt-5 text-center">Search By Address</h3> -->
-                    <!-- <div class="d-flex justify-content-center px-5"> -->
-                    <!-- <div class="search"> -->
-                    <!-- <input type="text" class="search-input" placeholder="Enter your address..."> -->
-                    <!-- <button type="submit" class="btn search-icon"> -->
-                    <!-- <i class="fa fa-search"></i> -->
-                    <!-- </button> -->
-                    <!-- </div> -->
-                    <!-- </div> -->
+                    <!-- Search bar for city -->
+                    <form method="POST" action="city_search_results.php">
+                        <h3 class="heading mt-5 text-center">Search By City</h3>
+                        <div class="d-flex justify-content-center px-5">
+                            <div class="search">
+                                <input type="text" class="search-input" name="city" placeholder="Enter your city...">
+                                <button type="submit" class="btn search-icon">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Search bar for budget  -->
 
@@ -112,52 +104,51 @@ include_once "../includes/dbconnect.inc.php";
 
                     <form method="POST" action="specialization_search_results.php">
                         <div class="row mt-4 g-1 px-1 mb-5">
-                            <!-- this is where we fix buttons? -->
-                            <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Lighting" class="btn">
-                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/kitchen.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Lighting </div>
-                                    </div>
-                                </button>
-                            </div>
                             <div class="col-md-2">
                                 <button type="submit" name="specialization" value="Electrical" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/bathtub.png" width="50">
+                                        <img src="../styling/icons/electrical.png" width="50">
                                         <div class="text-center mg-text pt-1"> Electrical </div>
                                     </div>
                                 </button>
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Full Room" class="btn">
+                                <button type="submit" name="specialization" value="Plumbing" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/house.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Full Room </div>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Interior Design" class="btn">
-                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/interior.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Interior Design </div>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="submit" name="specialization" value="Flooring" class="btn">
-                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/plank.png" width="50">
-                                        <div class="text-center mg-text pt-1"> Flooring </div>
+                                        <img src="../styling/icons/plumbing.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Plumbing </div>
                                     </div>
                                 </button>
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" name="specialization" value="Painting" class="btn">
                                     <div class="card-inner p-3 d-flex flex-column align-items-center">
-                                        <img src="../styling/icons/paint.png" width="50">
+                                        <img src="../styling/icons/painting.png" width="50">
                                         <div class="text-center mg-text pt-1"> Painting </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Flooring" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/flooring.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Flooring </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Cleaning" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/cleaning.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Cleaning </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" name="specialization" value="Decoration" class="btn">
+                                    <div class="card-inner p-3 d-flex flex-column align-items-center">
+                                        <img src="../styling/icons/room.png" width="50">
+                                        <div class="text-center mg-text pt-1"> Decoration </div>
                                     </div>
                                 </button>
                             </div>
