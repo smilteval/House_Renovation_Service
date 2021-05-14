@@ -38,7 +38,12 @@ include "../includes/signup-handle.inc.php";
             <small><?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?></small>
 
             <label>Password:<br><input type="password" name="password" value="<?php echo $password ?? ''; ?>"></label><br>
-            <small><?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?></small>
+            <small>
+                <?php
+                echo (isset($errors['password'])) ? $errors['password'] : '';
+                echo (isset($errors["pwd_pattern"])) ? $errors['pwd_pattern'] : '';
+                ?>
+            </small>
 
             <label>First Name:<br><input type="text" name="first_name" value="<?php echo (isset($_POST['first_name'])) ? $_POST['first_name'] : ''; ?>"></label><br>
             <small><?php echo (isset($errors['first_name'])) ? $errors['first_name'] : ''; ?></small>
