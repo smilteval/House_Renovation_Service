@@ -101,6 +101,14 @@ include "../includes/signup-handle.inc.php";
                 </small>
             </label>
             <br>
+            <label>State:
+                <input type="text" name="state" value="<?php echo $state ?? ''; ?>">
+                <br>
+                <small>
+                    <?php echo (isset($errors['state'])) ? $errors['state'] : ''; ?>
+                </small>
+            </label>
+            <br>
             <label>Zip Code:
                 <input type="number" name="zipcode" value="<?php echo $zipcode ?? ''; ?>">
                 <br>

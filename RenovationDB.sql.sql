@@ -39,7 +39,6 @@ FOREIGN KEY (contractor_id_fk) REFERENCES contractor(contractor_id) );
 CREATE TABLE service
 (service_id integer AUTO_INCREMENT PRIMARY KEY,
 service_name varchar(20),
-price decimal(8,2),
 order_id_fk integer,
 FOREIGN KEY (order_id_fk) REFERENCES order_info(order_id) );
 
@@ -48,7 +47,6 @@ CREATE TABLE room
 (room_id integer AUTO_INCREMENT PRIMARY KEY,
 room_name varchar(20),
 service_id_fk integer,
-room_price decimal (8,2),
 FOREIGN KEY (service_id_fk) REFERENCES service(service_id) );
 
 INSERT INTO contractor (company_name,specialization,cost_for_hire,zipcode,phone,email,website,city,state) VALUES ('Your Home Inc.','Plumbing','10000','11111','1112223333','yourhome@gmail.com','www.yourhome.com','New York City','New York');
