@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../navbar.php";
+include "../includes/create_order_handler.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,8 @@ include "../navbar.php";
     <div class="container mt-4">
 
         <?php
+        var_dump($_POST);
+        if(isset($_POST["id"])){
         $contractorId = $_POST["id"];
 
         //get all info about the selected contractor from db
@@ -46,13 +49,15 @@ include "../navbar.php";
         $_SESSION["specialization"] = $contractor["specialization"];
         $_SESSION["cost_for_hire"] = $contractor["cost_for_hire"];
         $_SESSION["contractor_id"] = $contractor["contractor_id"];
+    }
         ?>
+        
 
         <h3 class = "mb-4">Create your order here:</h3>
-        <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $contractor['specialization']; ?></span> service provided by <span><?php echo $contractor["company_name"]?></span>?</h5>
-
+        <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $_SESSION['specialization']; ?></span> service provided by <span><?php echo $_SESSION["company_name"]?></span>?</h5>
+        <?php var_dump($_SESSION); ?>
         <!-- select rooms for the service -->
-        <form action="order_summary.php" method="POST">
+        <form action="create_order.php" method="POST">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Bedroom"> Bedroom </label><br>
             <label><input type="checkbox" name="rooms[]" value="Dining Room"> Dining Room </label><br>
@@ -65,6 +70,7 @@ include "../navbar.php";
             <br>
             <input type="submit" class="btn" name="submit" value="Choose options" /><br>
         </form>
+        <small><?php echo (isset($errors['rooms'])) ? $errors['rooms'] : ''; ?></small>
 
     </div>
 </body>
