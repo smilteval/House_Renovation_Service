@@ -26,7 +26,7 @@ include "../includes/login-handle.inc.php";
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4 mb-4">
 
         <!-- Login form -->
         <form action="login.php" method="POST">

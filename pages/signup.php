@@ -26,7 +26,7 @@ include "../includes/signup-handle.inc.php";
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4 mb-4">
 
         <h3 class="mt-4 mb-4">Signup:</h3>
 
