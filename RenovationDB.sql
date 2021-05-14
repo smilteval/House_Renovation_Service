@@ -1,3 +1,5 @@
+-- command line statements that we used to make the database
+
 CREATE DATABASE renovation;
 
 USE renovation;
