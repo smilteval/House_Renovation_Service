@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../navbar.php";
-include '../handle_form.inc.php';
 include_once "../includes/dbconnect.inc.php";
 ?>
 
@@ -23,18 +22,96 @@ include_once "../includes/dbconnect.inc.php";
 
     <!-- Our CSS -->
 
-    <link rel="stylesheet" href="../styling/homepage.css" />
+    <style>
+        .card {
+            border: none;
+            background: #eee;
+        }
+
+        .search {
+            width: 100%;
+            margin-top: 20px;
+            height: 50px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px
+        }
+
+        .search-input {
+            padding: 0 10px;
+            margin-top: 5px;
+            line-height: 20px;
+            border: 0;
+            outline: 0;
+            width: 100%;
+            caret-color: #0070F0;
+            font-size: 19px;
+            font-weight: 300;
+            color: black;
+        }
+
+        .search-icon {
+            height: 34px;
+            width: 34px;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: #00D4F0;
+            font-size: 10px;
+            bottom: 30px;
+            position: relative;
+            border-radius: 5px
+        }
+
+        .search-icon:hover {
+            background-color: #0070F0;
+        }
+
+        .card-inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+            border: none;
+            cursor: pointer;
+            transition: all 2s
+        }
+
+        .card-inner:hover {
+            transform: scale(1.2)
+        }
+
+        .mg-text {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        span{
+            color: #00D4F0;
+        }
+    </style>
 
     <title>Homepage</title>
 </head>
 
 <body>
 
-    <?php if (isset($_SESSION["username"])) {
-        echo "<h2>Welcome " . $_SESSION["username"] . "!</h2>";
-    } ?>
-
     <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+            <?php if (isset($_SESSION["username"])) {
+                echo "<h2>Welcome <span>" . $_SESSION["username"] . "!</span></h2>";
+            } ?>
+        </div>
+    </div>
+
+    <div class="container mt-4 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="card p-4 mt-3">
 
@@ -74,7 +151,7 @@ include_once "../includes/dbconnect.inc.php";
                 <!-- Search for services  -->
                 <form action="specialization_search_results.php" method="POST">
                     <h3 class="heading mt-5 text-center">Search By Specialization</h3>
-                    <div class="row mt-4 g-1 px-1 mb-5">
+                    <div class="row mt-4 g-1 px-1">
                         <div class="col-md-2">
                             <button type="submit" name="specialization" value="Electrical" class="btn">
                                 <div class="card-inner p-3 d-flex flex-column align-items-center">

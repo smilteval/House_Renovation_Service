@@ -7,3 +7,7 @@ span {
 span:hover {
     text-decoration: none;
 }
+
+body{
+    background-color: blue;
+}

@@ -14,15 +14,16 @@ include "includes/dbconnect.inc.php";
 
   <!-- Bootstrap CSS -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
-  <!-- Font Awesome Icons -->
-
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /> -->
 
   <!-- Our CSS -->
 
-  <link rel="stylesheet" href="../styling/search_results.css" />
+  <style>
+    nav {
+      font-family: Helvetica;
+    }
+  </style>
+
 </head>
 
 <body>
