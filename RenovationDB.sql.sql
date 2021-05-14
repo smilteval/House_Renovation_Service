@@ -65,4 +65,7 @@ INSERT INTO room(room_name,service_id_fk,room_price) VALUES ('Bathroom','1','700
 
 alter table customer add password varchar(255);
 alter table customer add username varchar(255) ;
-ALTER TABLE `customer` ADD UNIQUE(`username`)
+ALTER TABLE `customer` ADD UNIQUE(`username`);
+alter table customer add city varchar(255);
+alter table customer add state varchar(255);
+alter table contractor add city varchar(255);

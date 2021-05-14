@@ -89,6 +89,13 @@ include "../includes/signup-handle.inc.php";
             </small>
         </label>
     <br>
+        <label>City: 
+        <input type="text" name="city" value="<?php echo $city ?? ''; ?>">
+    <br>
+            <small>
+                <?php echo (isset($errors['city'])) ? $errors['city'] : ''; ?>
+            </small>
+        </label>
         <label>Zip Code: 
         <input type="number" name="zipcode" value="<?php echo $zipcode ?? ''; ?>">
     <br>

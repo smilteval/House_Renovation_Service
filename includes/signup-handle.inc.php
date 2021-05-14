@@ -27,6 +27,9 @@
         if(empty($_POST['address'])){
             $errors['address'] = "Missing Address";
         }
+        if(empty($_POST['city'])){
+            $errors['address'] = "Missing City";
+        }
         if(empty($_POST['zipcode'])){
             $errors['zipcode'] = "Missing Zipcode";
         }
@@ -40,6 +43,7 @@
             $first_name = sanitizeString($_POST['first_name']);
             $last_name = sanitizeString($_POST['last_name']);
             $address = sanitizeString($_POST['address']);
+            $city = sanitizeString($_POST['city']);
             $zipcode = sanitizeString($_POST['zipcode']);
             $budget = sanitizeString($_POST['budget']);
 
@@ -64,11 +68,11 @@
                 //returns hashed string
                 $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-                $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, zipcode, budget)";
-                $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
+                $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, city, zipcode, budget)";
+                $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
 
                 $stmt2 = $conn->prepare($insertQ);
-                $stmt2->bind_param("sssssii",$username, $hashed_pwd, $first_name, $last_name, $address, $zipcode, $budget);
+                $stmt2->bind_param("ssssssii",$username, $hashed_pwd, $first_name, $last_name, $address, $city, $zipcode, $budget);
                 if(!$stmt2->execute()){
                     $error["insert"] = "We have a problem creating your account"; //can also use try catch block
                 } else { // no problems in creating the account
