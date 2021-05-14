@@ -20,7 +20,7 @@ include "../includes/login-handle.inc.php";
 
     <!-- Our CSS -->
 
-    <link rel="stylesheet" href="../styling/login.css" />
+    <link rel="stylesheet" href="../styling/general.css" />
 
     <title>Login</title>
 </head>
@@ -31,10 +31,12 @@ include "../includes/login-handle.inc.php";
         <!-- Login form -->
         <form action="login.php" method="POST">
 
-            <label>Username:<input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>"></label><br>
+            <h3 class="mt-4 mb-4">Login:</h3>
+
+            <label>Username: <br><input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>"></label><br>
             <small><?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?></small>
 
-            <label>Password:<input type="password" name="password" value="<?php echo $password ?? ''; ?>"></label><br>
+            <label>Password: <br><input type="password" name="password" value="<?php echo $password ?? ''; ?>"></label><br>
             <small><?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?></small>
 
             <!-- handle incorrect password and non-existing user -->
@@ -43,14 +45,14 @@ include "../includes/login-handle.inc.php";
                 <?php echo (isset($errors['no_user'])) ? $errors['no_user'] : ''; ?><br>
             </small>
 
-            <input type="submit" name="login" value="Login"><br>
+            <input type="submit" class="btn" name="login" value="Login"><br>
 
         </form>
         <br>
 
         <!-- link login to signup -->
         <form action="signup.php" method="POST">
-            <input type="submit" value="No Account? Signup." />
+            <input type="submit" class="btn secondary" value="No Account? Signup." />
         </form>
         
     </div>

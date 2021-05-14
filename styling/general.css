@@ -1,28 +1,38 @@
-h3 span, h5 span {
-    color: #00D4F0;
-    text-decoration: none;
-    cursor: default;
+h3 span,
+h5 span {
+  color: #00d4f0;
+  text-decoration: none;
+  cursor: default;
 }
 
 span {
-    color: #0070F0;
-    cursor: pointer;
-    text-decoration: underline;
+  color: #0070f0;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 span:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .btn {
-    background-color: #00D4F0;
-    color: #fff;
+  background-color: #00d4f0;
+  color: #fff;
+}
+
+.secondary {
+  background-color: #e1e4e6;
+  color: black;
 }
 
 .btn:hover {
-    background-color: #0070F0;
+  background-color: #0070f0;
+}
+
+.secondary:hover {
+  background-color: #9e9d9d;
 }
 
 small {
-    color: red;
-  }
+  color: red;
+}
