@@ -1,4 +1,4 @@
-h3 span {
+h3 span, h5 span {
     color: #00D4F0;
     text-decoration: none;
     cursor: default;
@@ -22,3 +22,7 @@ span:hover {
 .btn:hover {
     background-color: #0070F0;
 }
+
+small {
+    color: red;
+  }

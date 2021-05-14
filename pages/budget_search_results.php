@@ -22,7 +22,7 @@ include_once "../includes/dbconnect.inc.php";
 
     <!-- Our CSS -->
 
-    <link href="../styling/search_results.css" rel="stylesheet" />
+    <link href="../styling/general.css" rel="stylesheet" />
 
     <title>Budget Search Results</title>
 </head>

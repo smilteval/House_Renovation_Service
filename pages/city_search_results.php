@@ -20,7 +20,7 @@ include "../navbar.php";
 
     <!-- Our CSS -->
 
-    <link href="../styling/search_results.css" rel="stylesheet" />
+    <link href="../styling/general.css" rel="stylesheet" />
 
     <title>City Search Results</title>
 </head>

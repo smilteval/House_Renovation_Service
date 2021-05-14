@@ -16,6 +16,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #d1d1d1;
 }
-small {
-  color: red;
-}
+

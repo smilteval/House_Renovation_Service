@@ -21,18 +21,18 @@ include "../navbar.php";
 
     <!-- Our CSS -->
 
-    <!-- <link rel="stylesheet" href="../styling/login.css" /> -->
+    <link rel="stylesheet" href="../styling/general.css" />
 
     <title>Order Summary</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4 mb-4">
         <h3>Your order summary:</h3>
 
         <div class="row">
 
-            <div class="col-md-5">
+            <div class="col-md-12">
 
                 <?php
 
@@ -69,7 +69,7 @@ include "../navbar.php";
                         $totalrooms += 1;
                     }
 
-                    echo "<br><b>Total Cost:</b> $" . number_format($totalcost);
+                    echo "<br><b>Total Cost:</b> $" . number_format($totalcost)."<br><br>";
                 }
 
                 ?>
@@ -80,7 +80,7 @@ include "../navbar.php";
                     echo "<input type='hidden' name='totalcost' value='$totalcost' >";
                     echo "<input type='hidden' name='totalrooms' value='$totalrooms' >";
                     ?>
-                    <input type="submit" name="submit" class="btn btn-primary" id="login-button" value="Complete Order" />
+                    <input type="submit" name="submit" class="btn" id="login-button" value="Complete Order" />
                 </form>
 
             </div>

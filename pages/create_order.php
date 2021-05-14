@@ -22,13 +22,13 @@ include "../includes/dbconnect.inc.php";
 
     <!-- Our CSS -->
 
-    <!-- <link rel="stylesheet" href="../styling/search_results.css" /> -->
+    <link href="../styling/general.css" rel="stylesheet" />
 
     <title>Create Order</title>
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-4">
 
         <?php
         $contractorId = $_POST["id"];
@@ -49,9 +49,8 @@ include "../includes/dbconnect.inc.php";
         $_SESSION["contractor_id"] = $contractor["contractor_id"];
         ?>
 
-        <h3>Create your order here:</h3>
-        <br>
-        <h5>Which rooms do you plan to renovate with the <b><?php echo $contractor['specialization']; ?></b> service?</h5>
+        <h3 class = "mb-4">Create your order here:</h3>
+        <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $contractor['specialization']; ?></span> service provided by <span><?php echo $contractor["company_name"]?></span>?</h5>
 
         <!-- select rooms for the service -->
         <form action="order_summary.php" method="POST">
@@ -64,8 +63,8 @@ include "../includes/dbconnect.inc.php";
             <label><input type="checkbox" name="rooms[]" value="Basement"> Basement </label><br>
             <label><input type="checkbox" name="rooms[]" value="Nursery"> Nursery </label><br>
             <label><input type="checkbox" name="rooms[]" value="Gym"> Gym </label><br>
-            <input type="submit" class="btn" name="submit" value="Choose options" /><br>
             <br>
+            <input type="submit" class="btn" name="submit" value="Choose options" /><br>
         </form>
 
     </div>
