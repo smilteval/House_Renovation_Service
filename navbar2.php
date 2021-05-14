@@ -12,10 +12,6 @@ include "includes/dbconnect.inc.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /> -->
-
   <!-- Our CSS -->
 
   <style>
@@ -31,8 +27,6 @@ include "includes/dbconnect.inc.php";
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <!-- Dark theme -->
     <a class="navbar-brand" href="http://localhost/house_renovation_service/pages/homepage.php">House Renovation Service</a> <!-- Left most side of navbar -->
-
-
   </nav>
 
   <!-- Adding the script allowed the dropdown menu to work -->

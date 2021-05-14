@@ -55,10 +55,10 @@ include "../navbar.php";
                     //show contractor info
                     echo "<hr>";
                     echo "<h3>" . $row['company_name'] . "</h3>";
-                    echo "<p><b>Cost for Hire</b>: $" . number_format($row['cost_for_hire']) . "</br>"; 
+                    echo "<p><b>Cost for Hire</b>: $" . number_format($row['cost_for_hire']) . "</br>";
                     echo "<b>Specialization</b>: " . $row['specialization'] . "</br>";
                     echo "<b>Zip Code</b>: " . $row['zipcode'] . "</br>";
-                    if (preg_match('/(\d{3})(\d{3})(\d{4})$/', $row['phone'],  $matches)) { 
+                    if (preg_match('/(\d{3})(\d{3})(\d{4})$/', $row['phone'],  $matches)) {
                         $format = $matches[1] . '-' . $matches[2] . '-' . $matches[3];
                     }
                     echo "<b>City</b>: " . $row["city"] . "<br>";

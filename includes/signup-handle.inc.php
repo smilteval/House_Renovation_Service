@@ -1,5 +1,4 @@
 <?php
-    // include "dbconnect.inc.php"; 
     include "functions.inc.php";
 
     $errors = [];

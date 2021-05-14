@@ -31,29 +31,29 @@ include "../includes/create_order_handle.inc.php";
     <div class="container mt-4">
 
         <?php
-        if(isset($_POST["id"])){
-        $contractorId = $_POST["id"];
+        if (isset($_POST["id"])) {
+            $contractorId = $_POST["id"];
 
-        //get all info about the selected contractor from db
-        $query = "SELECT contractor_id, company_name, specialization, cost_for_hire FROM contractor WHERE contractor_id = ?"; //POST has the contractor id saved, let's get other info with it
+            //get all info about the selected contractor from db
+            $query = "SELECT contractor_id, company_name, specialization, cost_for_hire FROM contractor WHERE contractor_id = ?"; 
 
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $contractorId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $contractor = $result->fetch_assoc();
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("s", $contractorId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $contractor = $result->fetch_assoc();
 
-        //save all that info into session
-        $_SESSION["company_name"] = $contractor["company_name"];
-        $_SESSION["specialization"] = $contractor["specialization"];
-        $_SESSION["cost_for_hire"] = $contractor["cost_for_hire"];
-        $_SESSION["contractor_id"] = $contractor["contractor_id"];
-    }
+            //save all that info into session
+            $_SESSION["company_name"] = $contractor["company_name"];
+            $_SESSION["specialization"] = $contractor["specialization"];
+            $_SESSION["cost_for_hire"] = $contractor["cost_for_hire"];
+            $_SESSION["contractor_id"] = $contractor["contractor_id"];
+        }
         ?>
-        
 
-        <h3 class = "mb-4">Create your order here:</h3>
-        <h5 class = "mb-4">Which rooms do you plan to renovate with the <span><?php echo $_SESSION['specialization']; ?></span> service provided by <span><?php echo $_SESSION["company_name"]?></span>?</h5>
+        <h3 class="mb-4">Create your order here:</h3>
+        <h5 class="mb-4">Which rooms do you plan to renovate with the <span><?php echo $_SESSION['specialization']; ?></span> service provided by <span><?php echo $_SESSION["company_name"] ?></span>?</h5>
+
         <!-- select rooms for the service -->
         <form action="create_order.php" method="POST">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>

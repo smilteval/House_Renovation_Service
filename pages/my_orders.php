@@ -3,7 +3,6 @@ session_start();
 include "../navbar.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,7 +131,6 @@ include "../navbar.php";
 
                 echo "</td></tr></tbody>";
             }
-
             echo "</table>";
         }
 

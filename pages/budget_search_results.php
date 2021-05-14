@@ -51,7 +51,7 @@ include "../navbar.php";
 
                 //traverse through all the selected contractors
                 while ($row = $result->fetch_assoc()) {
-                    
+
                     //show contractor info
                     echo "<hr>";
                     echo "<h3>" . $row['company_name'] . "</h3>";

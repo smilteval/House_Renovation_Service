@@ -11,7 +11,6 @@ if (!isset($_SESSION["username"])) {
 
     //prepare values for the query1
     $intver = (int)$_POST["totalrooms"]; //turn total room from a string to number
-
     $contractor_id = $_SESSION["contractor_id"];
     $customer_id = $_SESSION["userID"];
     $totalprice = $_POST["totalcost"];

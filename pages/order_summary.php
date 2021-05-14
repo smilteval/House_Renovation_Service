@@ -36,18 +36,15 @@ include "../navbar.php";
 
                 <?php
 
-                if (isset($_SESSION["room"])) { //(isset($_POST["submit"]))
-                        //check if rooms are set (which have been set inside handler)
-                    //save selected rooms in the session
-                    // $_SESSION["room"] = $_POST["rooms"];
+                if (isset($_SESSION["room"])) {
 
                     //if the user is not logged in, display a warning message
                     if (empty($_SESSION["username"])) {
                         $error_msg = "<br>*Warning: the order will not be saved since you are browsing as a guest. To complete the order, please log in.";
-                    } 
+                    }
                     //if the user is logged in, display their username 
                     else {
-                        $error_msg = ''; //error msg is empty since there is no error if user is logged in
+                        $error_msg = ''; //warning msg is empty 
                         echo "<br><b>User: </b> " . $_SESSION["username"] . "<br>";
                     }
 
@@ -70,7 +67,7 @@ include "../navbar.php";
                         $totalrooms += 1;
                     }
 
-                    echo "<br><b>Total Cost:</b> $" . number_format($totalcost)."<br><br>";
+                    echo "<br><b>Total Cost:</b> $" . number_format($totalcost) . "<br><br>";
                 }
 
                 ?>
