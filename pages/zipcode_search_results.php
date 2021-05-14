@@ -22,18 +22,18 @@ include_once "../includes/dbconnect.inc.php";
 
     <!-- Our CSS -->
 
-    <link rel="stylesheet" href="../styling/search_results.css" />
+    <link href="../styling/search_results.css" rel="stylesheet" />
 
     <title>Zip Code Search Results</title>
 </head>
 
 <body>
-    <div class="container">
-        <h3>Results for zip code: <?php echo $_POST["zipcode"]; ?> </h3>
+    <div class="container mt-4 mb-4">
+        <h3>Results for zip code: <span><?php echo $_POST["zipcode"]; ?> </span></h3>
 
         <!-- display contractor list -->
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-12">
 
                 <?php
                 $zip = $_POST["zipcode"];

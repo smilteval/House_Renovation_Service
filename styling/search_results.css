@@ -1,5 +1,11 @@
+h3 span {
+    color: #00D4F0;
+    text-decoration: none;
+    cursor: default;
+}
+
 span {
-    color: blue;
+    color: #0070F0;
     cursor: pointer;
     text-decoration: underline;
 }
@@ -8,6 +14,11 @@ span:hover {
     text-decoration: none;
 }
 
-body{
-    background-color: blue;
+.btn {
+    background-color: #00D4F0;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #0070F0;
 }

@@ -22,18 +22,18 @@ include_once "../includes/dbconnect.inc.php";
 
     <!-- Our CSS -->
 
-    <link rel="stylesheet" href="../styling/search_results.css" />
+    <link href="../styling/search_results.css" rel="stylesheet" />
 
     <title>Budget Search Results</title>
 </head>
 
 <body>
-    <div class="container">
-        <h3>Results for budget: <?php echo "$" . number_format($_POST["budget"]); ?> </h3>
+    <div class="container mt-4 mb-4">
+        <h3>Results for budget: <span><?php echo "$" . number_format($_POST["budget"]); ?> </span></h3>
 
         <!-- display contractor list -->
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-12">
 
                 <?php
                 $budget = $_POST["budget"];
