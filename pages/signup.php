@@ -1,4 +1,5 @@
 <?php
+include "../navbar.php";
 include "../includes/signup-handle.inc.php";
 ?>
 
