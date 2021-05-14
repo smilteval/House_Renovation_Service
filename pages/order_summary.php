@@ -44,9 +44,10 @@ include "../navbar.php";
                     //if the user is not logged in, display a warning message
                     if (empty($_SESSION["username"])) {
                         $error_msg = "<br>*Warning: the order will not be saved since you are browsing as a guest. To complete the order, please log in.";
-                    }
+                    } 
                     //if the user is logged in, display their username 
                     else {
+                        $error_msg = ''; //error msg is empty since there is no error if user is logged in
                         echo "<br><b>User: </b> " . $_SESSION["username"] . "<br>";
                     }
 
@@ -82,7 +83,7 @@ include "../navbar.php";
                     ?>
 
                     <input type="submit" name="submit" class="btn" id="login-button" value="Complete Order" />
-                    <small><?php echo $error_msg?></small>
+                    <small><?php echo $error_msg; ?></small>
                 </form>
 
             </div>
