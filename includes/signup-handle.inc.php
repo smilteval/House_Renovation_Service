@@ -1,46 +1,44 @@
 <?php
-    include "dbconnect.inc.php"; //we d/n have includes in path because dbconnect is in the same folder as this current file
+    include "dbconnect.inc.php"; 
     include "functions.inc.php";
-
-    //This protects password in the DB
-    //https://www.php.net/manual/en/function.password-hash.php
-
-    // var_dump($_POST);
 
     $errors = [];
 
-    // echo "hi"; //test
-    if(isset($_POST['signup'])){ //submit comes from attribute name in the button
-        //Assume that you have a regular expression (regex)
+    if(isset($_POST['signup'])){
+        
+        //handle empty fields
         if(empty($_POST['username'])){
-            $errors['username'] = "Missing Username";
+            $errors['username'] = "Missing Username<br>";
         }
         if(empty($_POST['password'])){
-            $errors['password'] = "Missing Password";
+            $errors['password'] = "Missing Password<br>";
         }
         if(empty($_POST['first_name'])){
-            $errors['first_name'] = "Missing First Name";
+            $errors['first_name'] = "Missing First Name<br>";
         }
         if(empty($_POST['last_name'])){
-            $errors['last_name'] = "Missing Last Name";
+            $errors['last_name'] = "Missing Last Name<br>";
         }
         if(empty($_POST['address'])){
-            $errors['address'] = "Missing Address";
+            $errors['address'] = "Missing Address<br>";
         }
         if(empty($_POST['city'])){
-            $errors['city'] = "Missing City";
+            $errors['city'] = "Missing City<br>";
         }
         if(empty($_POST['state'])){
-            $errors['state'] = "Missing State";
+            $errors['state'] = "Missing State<br>";
         }
         if(empty($_POST['zipcode'])){
-            $errors['zipcode'] = "Missing Zipcode";
+            $errors['zipcode'] = "Missing Zipcode<br>";
         }
         if(empty($_POST['budget'])){
-            $errors['budget'] = "Missing Budget";
+            $errors['budget'] = "Missing Budget<br>";
         }
-        if(count($errors) == 0){ //if there are no errors, proceed
+
+        //if there are no errors, proceed
+        if(count($errors) == 0){ 
     
+            //sanitize all input
             $username = sanitizeString($_POST['username']);
             $pwd = sanitizeString($_POST['password']);
             $first_name = sanitizeString($_POST['first_name']);
@@ -51,26 +49,20 @@
             $zipcode = sanitizeString($_POST['zipcode']);
             $budget = sanitizeString($_POST['budget']);
 
-
-            // echo $username;
-
+            //check if a username is already in the db
             $checkQ = "SELECT username FROM customer WHERE username = ?";
 
-            //use prepare statements for these vars
             $stmt = $conn->prepare($checkQ);
             $stmt->bind_param("s",$username);
             $stmt->execute();
+            $result = $stmt->get_result();
 
-            //This is an object, it can tell you how many rows have returned from query
-            // $result = $stmt->get_result();
-            // var_dump($result());
+            if($result->num_rows > 0){ 
+                $errors['duplicate'] = "Username is already taken.<br>";   
+            } 
+            else { //if the user account does not exist, append it to the db
 
-            if($stmt->get_result()->num_rows > 0){ //there is duplicate
-                $error['duplicate'] = "Account is taken";   
-            } else { //appending the account information into the db
-
-                //returns hashed string
-                $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
+                $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT); //hash the password 
 
                 $insertQ = "INSERT INTO customer (username, password, first_name, last_name, address, city, state, zipcode, budget)";
                 $insertQ .= "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; //use ? to prevent SQL injection
@@ -78,10 +70,9 @@
                 $stmt2 = $conn->prepare($insertQ);
                 $stmt2->bind_param("sssssssii",$username, $hashed_pwd, $first_name, $last_name, $address, $city, $state, $zipcode, $budget);
                 if(!$stmt2->execute()){
-                    $error["insert"] = "We have a problem creating your account"; //can also use try catch block
-                } else { // no problems in creating the account
-                    echo "Your account is created"; 
-                    // ** Maybe redirect the user to welcome page or login? **
+                    $errors["insert_err"] = "We have a problem creating your account<br>"; 
+                } 
+                else { // if there are no problems, redirect to login page
                     header ("Location: login.php");
                 }
             }

@@ -1,78 +1,59 @@
 <?php
-include "../includes/login-handle.inc.php"; //needed the ../ for correct path
+include "../includes/login-handle.inc.php";
 ?>
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Font Awesome Icons -->
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Our CSS -->
+
+    <link rel="stylesheet" href="../styling/login.css" />
+
     <title>Login</title>
 </head>
 
-<style>
-    .container{
-        padding: 10px;
-    }
-    label{
-        width: 210px;
-        display: inline-block;
-    }
-    input[type="submit"]{
-        background-color: #EFEFEF;
-        border: 0;
-        padding: 7px;
-        width: 178px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-    input[type="submit"]:hover{
-        background-color: #d1d1d1;
-    }
-    small{
-       color: red;
-    }
-</style>
-
 <body>
+    <div class="container">
 
-    <?php
-    if (!empty($error)) { //prints errors if there are any 
-        echo "<ul>";
-        foreach ($error as $e) {
-            echo "<li>$e</li>";
-        }
-        echo "</ul>";
-    }
-    ?>
-    <form action="login.php" method="POST"> <!-- changed action to login.php, previously was on homepage.php. I guess the form never finished and just instantly went to homepage -->
-        <label>Username: 
-            <input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>">
-    <br>
+        <!-- Login form -->
+        <form action="login.php" method="POST">
+
+            <label>Username:<input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?></small>
+
+            <label>Password:<input type="password" name="password" value="<?php echo $password ?? ''; ?>"></label><br>
+            <small><?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?></small>
+
+            <!-- handle incorrect password and non-existing user -->
             <small>
-                <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
+                <?php echo (isset($errors['inc_pwd'])) ? $errors['inc_pwd'] : ''; ?>
+                <?php echo (isset($errors['no_user'])) ? $errors['no_user'] : ''; ?><br>
             </small>
-        </label>
-    <br>
 
-        <label>Password: 
-            <input type="password" name="password" value="<?php echo $password ?? ''; ?>"> <!-- password had one character already filled in because of the white space between ?> and ". Strange -->
+            <input type="submit" name="login" value="Login"><br>
+
+        </form>
         <br>
-            <small>
-                <?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?>
-                <?php echo (isset($errors['acc'])) ? $errors['acc'] : ''; ?>
-            </small>
-        </label>
-    <br>
-    <br>
 
-        <input type="submit" name="login" value="Login">
-    </form>
-    <br>
-    <form action="signup.php" method="POST"> <!-- Button to link user to signup on the login page -->
-        <input type="submit" value="No Account? Signup"/>
-    </form>
-
+        <!-- link login to signup -->
+        <form action="signup.php" method="POST">
+            <input type="submit" value="No Account? Signup." />
+        </form>
+        
+    </div>
 </body>
 
 </html>

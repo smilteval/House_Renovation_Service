@@ -1,0 +1,21 @@
+.container {
+  padding: 10px;
+}
+label {
+  width: 210px;
+  display: inline-block;
+}
+input[type="submit"] {
+  background-color: #efefef;
+  border: 0;
+  padding: 7px;
+  width: 178px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+input[type="submit"]:hover {
+  background-color: #d1d1d1;
+}
+small {
+  color: red;
+}

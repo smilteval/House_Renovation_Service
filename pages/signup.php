@@ -3,137 +3,77 @@ include "../includes/signup-handle.inc.php";
 ?>
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Font Awesome Icons -->
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Our CSS -->
+
+    <link rel="stylesheet" href="../styling/login.css" />
+
     <title>Signup</title>
 </head>
 
-<style>
-    .container {
-        padding: 10px;
-    }
-
-    label {
-        width: 210px;
-        display: inline-block;
-    }
-
-    input[type="submit"] {
-        background-color: #EFEFEF;
-        border: 0;
-        padding: 7px;
-        width: 178px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #d1d1d1;
-    }
-
-    small {
-        color: red;
-    }
-</style>
-
-
 <body>
-
-    <?php
-    if (!empty($error)) { //prints errors if there are any 
-        echo "<ul>";
-        foreach ($error as $e) {
-            echo "<li><small>$e</small></li>";
-        }
-        echo "</ul>";
-    }
-    ?>
     <div class="container">
+
+        <!-- Signup form -->
         <form action="signup.php" method="POST">
-            <!-- use post method for sensitive data-->
-            <label>Username:
-                <input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>Password:
-                <input type="password" name="password" value="<?php echo $password ?? ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>First Name:
-                <input type="text" name="first_name" value="<?php echo (isset($_POST['first_name'])) ? $_POST['first_name'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['first_name'])) ? $errors['first_name'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>Last Name:
-                <input type="text" name="last_name" value="<?php echo (isset($_POST['last_name'])) ? $_POST['last_name'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['last_name'])) ? $errors['last_name'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>Address:
-                <input type="text" name="address" value="<?php echo (isset($_POST['address'])) ? $_POST['address'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['address'])) ? $errors['address'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>City:
-                <input type="text" name="city" value="<?php echo (isset($_POST['city'])) ? $_POST['city'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['city'])) ? $errors['city'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>State:
-                <input type="text" name="state" value="<?php echo (isset($_POST['state'])) ? $_POST['state'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['state'])) ? $errors['state'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>Zip Code:
-                <input type="number" name="zipcode" value="<?php echo (isset($_POST['zipcode'])) ? $_POST['zipcode'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['zipcode'])) ? $errors['zipcode'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <label>Budget:
-                <input type="number" name="budget" value="<?php echo (isset($_POST['budget'])) ? $_POST['budget'] : ''; ?>">
-                <br>
-                <small>
-                    <?php echo (isset($errors['budget'])) ? $errors['budget'] : ''; ?>
-                </small>
-            </label>
-            <br>
-            <br>
+
+            <label>Username:<input type="text" name="username" value="<?php echo (isset($_POST['username'])) ? $_POST['username'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['username'])) ? $errors['username'] : ''; ?></small>
+
+            <label>Password:<input type="password" name="password" value="<?php echo $password ?? ''; ?>"></label><br>
+            <small><?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?></small>
+
+            <label>First Name:<input type="text" name="first_name" value="<?php echo (isset($_POST['first_name'])) ? $_POST['first_name'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['first_name'])) ? $errors['first_name'] : ''; ?></small>
+
+            <label>Last Name:<input type="text" name="last_name" value="<?php echo (isset($_POST['last_name'])) ? $_POST['last_name'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['last_name'])) ? $errors['last_name'] : ''; ?></small>
+
+            <label>Address:<input type="text" name="address" value="<?php echo (isset($_POST['address'])) ? $_POST['address'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['address'])) ? $errors['address'] : ''; ?></small>
+
+            <label>City:<input type="text" name="city" value="<?php echo (isset($_POST['city'])) ? $_POST['city'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['city'])) ? $errors['city'] : ''; ?></small>
+
+            <label>State:<input type="text" name="state" value="<?php echo (isset($_POST['state'])) ? $_POST['state'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['state'])) ? $errors['state'] : ''; ?></small>
+
+            <label>Zip Code:<input type="number" name="zipcode" value="<?php echo (isset($_POST['zipcode'])) ? $_POST['zipcode'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['zipcode'])) ? $errors['zipcode'] : ''; ?></small>
+
+            <label>Budget:<input type="number" name="budget" value="<?php echo (isset($_POST['budget'])) ? $_POST['budget'] : ''; ?>"></label><br>
+            <small><?php echo (isset($errors['budget'])) ? $errors['budget'] : ''; ?></small>
+
+            <!-- handle duplicate username and unsuccessful insertion to db -->
+            <small>
+                <?php echo (isset($errors['duplicate'])) ? $errors['duplicate'] : ''; ?>
+                <?php echo (isset($errors['insert_err'])) ? $errors['insert_err'] : ''; ?><br>
+            </small>
+
             <input type="submit" class='btn search-icon' name="signup" value="Signup">
+
         </form>
         <br>
-        <br>
-        <form method="POST" action="login.php">
-            <!-- Button to link user to login on the signup page -->
-            <input type="submit" value="Existing User? Login" />
+
+        <!-- link signup to login -->
+        <form action="login.php" method="POST">
+            <input type="submit" value="Existing User? Login." />
         </form>
+
     </div>
 
 </body>

@@ -1,8 +1,7 @@
 <?php
 session_start();
 include "../navbar.php";
-// include "../includes/dbconnect.inc.php";
-
+include "../includes/dbconnect.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,34 +11,50 @@ include "../navbar.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Font Awesome Icons -->
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Our CSS -->
+
+    <!-- <link rel="stylesheet" href="../styling/search_results.css" /> -->
+
     <title>Create Order</title>
 </head>
 
 <body>
     <div class="container mt-5">
 
-        <?php 
-            $query = "SELECT contractor_id, company_name, specialization, cost_for_hire FROM contractor WHERE contractor_id = ?"; //POST has the contractor id saved, let's get other info with it
-            $theid = $_POST["id"];
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("s", $theid);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            // var_dump($_POST); //POST has the contractor id
-            $row = $result->fetch_assoc();
-            // var_dump($row);
-            $_SESSION["company_name"] = $row["company_name"]; //company name saved into session
-            $_SESSION["specialization"] = $row["specialization"]; //company sepcialization saved into session
-            $_SESSION["cost_for_hire"] = $row["cost_for_hire"]; //cost for hire saved into session
-            $_SESSION["contractor_id"] = $row["contractor_id"];
-            // var_dump($_SESSION);
+        <?php
+        $contractorId = $_POST["id"];
+
+        //get all info about the selected contractor from db
+        $query = "SELECT contractor_id, company_name, specialization, cost_for_hire FROM contractor WHERE contractor_id = ?"; //POST has the contractor id saved, let's get other info with it
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $contractorId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $contractor = $result->fetch_assoc();
+
+        //save all that info into session
+        $_SESSION["company_name"] = $contractor["company_name"];
+        $_SESSION["specialization"] = $contractor["specialization"];
+        $_SESSION["cost_for_hire"] = $contractor["cost_for_hire"];
+        $_SESSION["contractor_id"] = $contractor["contractor_id"];
         ?>
 
         <h3>Create your order here:</h3>
         <br>
-        <h5>Which rooms do you plan to renovate with the <b><?php echo $row['specialization'];?></b> service?</h5> 
+        <h5>Which rooms do you plan to renovate with the <b><?php echo $contractor['specialization']; ?></b> service?</h5>
 
-        <form action="order_summary.php" method="post"> <!-- service-per-room2.php -->
+        <!-- select rooms for the service -->
+        <form action="order_summary.php" method="POST">
             <label><input type="checkbox" name="rooms[]" value="Living Room"> Living room </label><br>
             <label><input type="checkbox" name="rooms[]" value="Bedroom"> Bedroom </label><br>
             <label><input type="checkbox" name="rooms[]" value="Dining Room"> Dining Room </label><br>
@@ -49,7 +64,7 @@ include "../navbar.php";
             <label><input type="checkbox" name="rooms[]" value="Basement"> Basement </label><br>
             <label><input type="checkbox" name="rooms[]" value="Nursery"> Nursery </label><br>
             <label><input type="checkbox" name="rooms[]" value="Gym"> Gym </label><br>
-            <input type="submit" name="submit" value="Choose options" /><br>
+            <input type="submit" class="btn" name="submit" value="Choose options" /><br>
             <br>
         </form>
 

@@ -1,7 +1,6 @@
 <?php
-
-    function sanitizeString($input){ //fcn to make things easier for us
+    //sanitizing user input
+    function sanitizeString($input){ 
         return htmlspecialchars($input);
     } 
-
 ?>
