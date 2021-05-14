@@ -43,7 +43,7 @@ include "../navbar.php";
 
                     //if the user is not logged in, display a warning message
                     if (empty($_SESSION["username"])) {
-                        $error_msg = "Warning: the order will not be saved since you are browsing as a guest. To complete the order, please log in.<b>";
+                        $error_msg = "<br>*Warning: the order will not be saved since you are browsing as a guest. To complete the order, please log in.";
                     }
                     //if the user is logged in, display their username 
                     else {
@@ -80,7 +80,9 @@ include "../navbar.php";
                     echo "<input type='hidden' name='totalcost' value='$totalcost' >";
                     echo "<input type='hidden' name='totalrooms' value='$totalrooms' >";
                     ?>
+
                     <input type="submit" name="submit" class="btn" id="login-button" value="Complete Order" />
+                    <small><?php echo $error_msg?></small>
                 </form>
 
             </div>
