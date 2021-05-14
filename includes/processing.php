@@ -6,7 +6,7 @@ include "dbconnect.inc.php";
 
 //go to login page if not logged in
 if (!isset($_SESSION["username"])) {
-    header("Location: login.php");
+    header("Location: ../pages/login.php");
 } else {
 
     //prepare values for the query1
