@@ -24,15 +24,14 @@ include "../navbar.php";
 
                 <?php
 
-                if (isset($_POST["submit"]) || $_SESSION["order saved"] === true) {
-                    // var_dump($_POST["rooms"]);
+                if (isset($_POST["submit"])) {
 
+                    $_SESSION["room"] = $_POST["rooms"];
 
-                    $_SESSION["room"] = $_POST["rooms"]; //save the room into the session, this is saved as an array: Array { [0]=> "Bathroom" [1] => "Kitchen" }
-                    echo "<b>User:</b> ";
                     if (empty($_SESSION["username"])) { //check if the user is logged in. If not, username would be empty
-                        echo "<b>Not logged in, please log in!</b>";
+                        $error_msg = "Not logged in, please log in!<b>";
                     } else { //if the user is logged in, display their username
+                        echo "<br><b>User: </b> ";
                         echo $_SESSION["username"];
                     }
                     echo "<br>"; //username if logged in
@@ -57,9 +56,11 @@ include "../navbar.php";
 
                 ?>
                 <form action="processing.php" method="post">
-                <?php echo "<input type='hidden' name='totalcost' value='$totalcost' > </input>"?> <!-- Saving total cost and rooms into POST-->
-                <?php echo "<input type='hidden' name='totalrooms' value='$totalrooms' > </input>"?>
+                    <?php echo "<input type='hidden' name='totalcost' value='$totalcost' > </input>" ?>
+                    <!-- Saving total cost and rooms into POST-->
+                    <?php echo "<input type='hidden' name='totalrooms' value='$totalrooms' > </input>" ?>
                     <input type="submit" name="submit" class="btn btn-primary" id="login-button" value="Complete Order" />
+
                 </form>
                 <!-- <a href="processing.php" class="btn btn-primary" id="login-button">
                     Complete Order

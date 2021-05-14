@@ -60,6 +60,7 @@ include "../includes/login-handle.inc.php"; //needed the ../ for correct path
         <br>
             <small>
                 <?php echo (isset($errors['password'])) ? $errors['password'] : ''; ?>
+                <?php echo (isset($errors['acc'])) ? $errors['acc'] : ''; ?>
             </small>
         </label>
     <br>

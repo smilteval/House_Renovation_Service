@@ -38,7 +38,7 @@
                     header("Location: homepage.php");
                     exit(0);
                 } else {
-                    $errors["acc"] = "The record is not matched";
+                    $errors["acc"] = "The password is incorrect! That's a little sus...";
                 }
             } else {
                 $errors["acc"] = "The record is not matched";

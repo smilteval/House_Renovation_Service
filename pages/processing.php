@@ -34,9 +34,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 $id = mysqli_insert_id($conn); //gets the last inserted id (the service id)
-var_dump($id);
-
-// var_dump($result);
 
 $query2 = "INSERT INTO service(service_name, order_id_fk)"; //insert into the service table
 $query2 .= "VALUES(?,?)";
@@ -64,5 +61,6 @@ foreach ($_SESSION["room"] as $room) { //printing out each room one by one
 
 }
 
+header("Location: my_orders.php");
 
 ?>
