@@ -87,21 +87,21 @@ include "../navbar.php";
 
             $service_id = $result->fetch_assoc(); 
 
-            var_dump($service_id);
+            //var_dump($service_id);
 
             //get all rooms for that service
             $query2 = "SELECT room_name FROM room WHERE service_id_fk = ?";
 
             $stmt2 = $conn->prepare($query2);
-            $stmt2->bind_param("i", $service_id);
+            $stmt2->bind_param("i", $service_id["service_id"]);
             $stmt2->execute();
             $result2 = $stmt2->get_result();
 
-            var_dump($result2);
+            //var_dump($result2);
 
             $rooms = $result2->fetch_all(MYSQLI_ASSOC);
 
-            var_dump($rooms);
+            //var_dump($rooms);
 
             if ($result2->num_rows === 0) {
                 echo "nothing to show";
@@ -119,11 +119,6 @@ include "../navbar.php";
             }
 
             echo "</td>";
-            //redirect user
-            // echo "<form action = 'order_info.php' method='POST' >";
-            // echo "<input type='hidden' name='orderID' value='$order_id' >";
-            // echo "<td><input type='submit' name='submit' value='View'></td>";
-            // echo "<form>";
 
             echo "</tr>";
         }
